@@ -1,0 +1,227 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Project from "../components/Project.astro";
+import {
+  CodepenLogo,
+  BracketsCurly,
+  Code,
+  GithubLogo,
+  TwitterLogo,
+  Envelope,
+  At,
+  File,
+} from "phosphor-react";
+---
+
+<Layout title="Stephen Purdue">
+  <main class="pb-32">
+    <div
+      class="bg-nord0 dark:bg-nord1 py-8 grid grid-auto-rows phone:grid-rows-[1fr] phone:grid-cols-[1fr_max-content_max-content_1fr] gap-4"
+    >
+      <div class="phone:col-start-2 flex justify-center">
+      </div>
+      <div
+        class="phone:col-start-3 flex items-center justify-center flex-col text-white"
+      >
+        <h1 class="font-bold tablet:text-6xl text-5xl text-center">
+          Stephen Purdue
+        </h1>
+        <span class="font-bold tablet:text-4xl text-3xl text-center"
+          >Software Engineer</span
+        >
+      </div>
+    </div>
+    <div class="flex">
+      <div class="grow h-[4px] bg-nord11"></div>
+      <div class="grow h-[4px] bg-nord12"></div>
+      <div class="grow h-[4px] bg-nord13"></div>
+      <div class="grow h-[4px] bg-nord14"></div>
+      <div class="grow h-[4px] bg-nord9"></div>
+    </div>
+    <div class="flex justify-center flex-wrap pt-6 gap-4 px-4">
+      <a
+        href="mailto:stephendpurdue@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-4 rounded-full transition-all shadow shadow-transparent bg-nord6 dark:bg-nord5 hover:bg-nord6 dark:hover:bg-nord6 hover:text-nord0 dark:hover:text-nord0 hover:-translate-y-1 hover:shadow-md active:translate-y-0 text-nord0"
+        aria-label="Email"
+      >
+        <Envelope size={24} weight="bold" />
+      </a>
+      </a>
+      <a
+        href="https://x.com/stephendpurdue"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-4 rounded-full transition-all shadow shadow-transparent bg-nord6 dark:bg-nord5 hover:bg-nord6 dark:hover:bg-nord6 hover:text-nord0 dark:hover:text-nord0 hover:-translate-y-1 hover:shadow-md active:translate-y-0 text-nord0"
+        aria-label="Twitter"
+      >
+        <TwitterLogo size={24} weight="bold" />
+      </a>
+      <a
+        href="https://github.com/stephendpurdue"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-4 rounded-full transition-all shadow shadow-transparent bg-nord6 dark:bg-nord5 hover:bg-nord6 dark:hover:bg-nord6 hover:text-nord0 dark:hover:text-nord0 hover:-translate-y-1 hover:shadow-md active:translate-y-0 text-nord0"
+        aria-label="GitHub"
+      >
+        <GithubLogo size={24} weight="bold" />
+      </a>
+      <a
+        href="/documents/Stephen Purdue CV.pdf"
+        download="Stephen Purdue CV.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-4 rounded-full transition-all shadow shadow-transparent bg-nord6 dark:bg-nord5 hover:bg-nord6 dark:hover:bg-nord6 hover:text-nord0 dark:hover:text-nord0 hover:-translate-y-1 hover:shadow-md active:translate-y-0 text-nord0"
+        aria-label="Resume"
+      >
+        <File size={24} weight="bold" />
+      </a>
+    </div>
+    <div class="flex justify-center gap-4 py-6">
+      <button
+        data-target="projects"
+        class="px-4 py-2 rounded-full shadow shadow-transparent bg-nord9 text-white font-bold hover:bg-nord0 dark:hover:bg-nord6 hover:text-white dark:hover:text-nord0 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-transparent transition-all"
+      >
+        Projects
+      </button>
+      <button
+        data-target="about"
+        class="px-4 py-2 rounded-full shadow shadow-transparent bg-nord6 dark:bg-nord5 dark:text-nord0 text-nord0 font-bold hover:bg-nord6 dark:hover:bg-nord6 hover:text-nord0 dark:hover:text-nord0 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-transparent transition-all"
+      >
+        About Me
+      </button>
+      <button
+        data-target="university"
+        class="px-4 py-2 rounded-full shadow shadow-transparent bg-nord6 dark:bg-nord5 dark:text-nord0 text-nord0 font-bold hover:bg-nord6 dark:hover:bg-nord6 hover:text-nord0 dark:hover:text-nord0 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-transparent transition-all"
+      >
+        University
+      </button>
+    </div>
+    <div
+      data-name="projects"
+      class="px-4 mx-auto w-full max-w-6xl grid phone:grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 gap-4"
+    >
+      <Project
+        name="Expense Tracker"
+        description="Budgeting tool created using Python and Pandas."
+        icon="/images/piechart.svg"
+        link="https://github.com/stephendpurdue/ExpenseTracker"
+      />
+    </div>
+    <div data-name="about" class="hidden">
+      <div class="mx-auto max-w-2xl px-4">
+        <p class="text-lg text-white">
+          Hi, I'm Stephen Purdue. I've been studying as a Game Developer for
+          the last 4 years working in Unity and Unreal Engine, I'm learning Python,
+          JavaScript, and React in order to pursue a career in Software Engineering. 
+          I am passionate about solving problems and understanding new programming languages.
+          While my core skill set is Game Development, I have found a love
+          for Machine Learning and Artificial Intelligence. Learning new technologies is
+          always an exciting opportunity and I enjoy building new things with them.
+        </p>
+      </div>
+    </div>
+    <div data-name="university" class="hidden">
+      <div class="mx-auto max-w-2xl px-4">
+        <p class="text-lg text-white">
+          Additional details about my university experience are coming soon.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    button[data-target],
+    a[aria-label] {
+      background-color: #ECEFF4 !important; /* nord6 */
+      color: #2E3440 !important; /* nord0 */
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      button[data-target],
+      a[aria-label] {
+        background-color: #D8DEE9 !important; /* nord5 */
+        color: #2E3440 !important; /* nord0 */
+      }
+    }
+    
+    button[data-target].bg-nord9 {
+      background-color: #88C0D0 !important; /* nord9 */
+      color: #FFFFFF !important;
+    }
+  </style>
+
+  <script type="module">
+    const buttons = document.querySelectorAll("button[data-target]");
+
+    let activeButton;
+    let activeSection;
+
+    const styles = {
+      button: {
+        active: ["bg-nord9", "text-white"],
+        inactive: [
+          "bg-nord6",
+          "dark:bg-nord5",
+          "text-nord0",
+          "dark:text-nord0",
+        ],
+      },
+    };
+
+    const style = (element, { add = [], remove = [] }) => {
+      for (const removed of remove) {
+        element.classList.remove(removed);
+      }
+
+      for (const added of add) {
+        element.classList.add(added);
+      }
+    };
+
+    const transition = (target) => {
+      const button = document.querySelector(`button[data-target="${target}"]`);
+      const section = document.querySelector(`div[data-name="${target}"]`);
+
+      if (!activeButton || !activeSection) {
+        // Transition without fade out
+        style(button, {
+          add: styles.button.active,
+          remove: styles.button.inactive,
+        });
+
+        section.classList.remove("hidden");
+
+        activeButton = button;
+        activeSection = section;
+      } else {
+        // Transition with fade out
+        style(activeButton, {
+          add: styles.button.inactive,
+          remove: styles.button.active,
+        });
+        style(button, {
+          add: styles.button.active,
+          remove: styles.button.inactive,
+        });
+
+        activeSection.classList.add("hidden");
+        section.classList.remove("hidden");
+
+        activeButton = button;
+        activeSection = section;
+      }
+    };
+
+    const onButtonClick = (event) => {
+      transition(event.target.getAttribute("data-target"));
+    };
+
+    for (const button of buttons) {
+      button.addEventListener("click", onButtonClick);
+    }
+
+    transition("projects");
+  </script>
+</Layout>
