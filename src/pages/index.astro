@@ -151,6 +151,11 @@ import {
               </p>
               <ul class="list-disc space-y-1 pl-5">
               </ul>
+              <iframe
+                src="/documents/Stephen Purdue CV.pdf"
+                class="w-full h-[900px] rounded-lg border border-nord6/40"
+                title="Major Research Project PDF"
+              ></iframe>
             </div>
           </details>
           <details
@@ -175,6 +180,11 @@ import {
               <p>
                
               </p>
+              <iframe
+                src="/documents/Stephen Purdue CV.pdf"
+                class="w-full h-[900px] rounded-lg border border-nord6/40"
+                title="Enterprise Focus PDF"
+              ></iframe>
             </div>
           </details>
           <details
@@ -199,6 +209,11 @@ import {
               <p>
                 
               </p>
+              <iframe
+                src="/documents/Stephen Purdue CV.pdf"
+                class="w-full h-[900px] rounded-lg border border-nord6/40"
+                title="Client Project: 'Slackers' PDF"
+              ></iframe>
             </div>
           </details>
           <details
@@ -223,6 +238,11 @@ import {
               <p>
                 
               </p>
+              <iframe
+                src="" 
+                class="w-full h-[900px] rounded-lg border border-nord6/40"
+                title="Final Project PDF"
+              ></iframe>
             </div>
           </details>
         </div>
@@ -248,6 +268,24 @@ import {
     button[data-target].bg-nord9 {
       background-color: #88C0D0 !important; /* nord9 */
       color: #FFFFFF !important;
+    }
+    
+    /* PDF iframe styling */
+    iframe {
+      background-color: #ECEFF4; /* nord6 */
+      min-height: 500px;
+    }
+    
+    @media (max-width: 640px) {
+      iframe {
+        height: 500px !important;
+      }
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      iframe {
+        background-color: #4C566A; /* nord4 */
+      }
     }
   </style>
 
