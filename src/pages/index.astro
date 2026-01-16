@@ -135,46 +135,461 @@ import {
           <h2 class="text-3xl font-bold text-white">University Projects</h2>
         </div>
         <div
-          class="grid gap-4 phone:grid-cols-2 tablet:grid-cols-2 laptop:grid-cols-4"
+          class="grid gap-4 phone:grid-cols-1 tablet:grid-cols-1 laptop:grid-cols-1"
         >
           <details
             class="group rounded-2xl border border-nord6/40 bg-nord0/60 p-4 text-white shadow transition hover:border-nord9 focus-within:border-nord9"
+            open
           >
             <summary
               class="flex w-full cursor-pointer list-none items-start justify-between gap-3 text-left font-semibold"
             >
               <div>
-                <p>Client Project: 'Slackers'</p>
+                <p class="text-2xl">Client Project: 'Slackers'</p>
                 <span class="text-sm font-normal text-nord6">Semester 1 - 2025</span>
               </div>
               <div class="flex items-center gap-2">
-                <a
-                  href="/documents/Stephen Purdue CV.pdf"
-                  download="Client Project - Slackers.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="px-4 py-2 rounded-full shadow shadow-transparent bg-nord6 dark:bg-nord5 dark:text-nord0 text-nord0 text-xs font-bold hover:bg-nord6 dark:hover:bg-nord6 hover:text-nord0 dark:hover:text-nord0 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-transparent transition-all"
-                >
-                  Download
-                </a>
                 <span
                   class="rounded-full bg-nord9/20 px-2 py-1 text-xs font-bold text-nord9 transition group-open:bg-nord9 group-open:text-nord0"
                   >Open</span
                 >
               </div>
             </summary>
-            <div class="mt-4 space-y-3 text-sm text-nord6">
-              <p>
+            <div class="mt-6 space-y-6 text-base text-nord6 max-w-5xl mx-auto slackers-content">
+              <!-- Student Information Table -->
+              <table class="w-full border-collapse border border-nord6/40 rounded-lg overflow-hidden">
+                <tbody>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Student Name:</td>
+                    <td class="px-4 py-2">Stephen Purdue</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Student ID:</td>
+                    <td class="px-4 py-2">2301815</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Course:</td>
+                    <td class="px-4 py-2">BSc, Computer Games Design & Development</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Module:</td>
+                    <td class="px-4 py-2">DM3108 - Negotiated Design Placement</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Word Count:</td>
+                    <td class="px-4 py-2">5000 +10%</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Date of Submission:</td>
+                    <td class="px-4 py-2">16/01/2026 - Before 12:00pm</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Project Brief -->
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4">Project Brief</h2>
+                <p class="mb-4">The project 'Slackers' is a brief given by RaRa Games in response to DM3108 - Negotiated Design Placement. It explores a unique game concept involving disguised aliens within human workplaces. The objective is to create a prototype that uses a gameplay loop centred around chaos and sabotage, similar to Among Us (InnerSloth, 2018).</p>
                 
-              </p>
-              <p>
+                <p class="mb-4">This prototype game will focus on a well-created mechanic, such as sabotage actions, enemy chasing, or the ability to change disguises. Players will navigate a small environment, such as an office, completing 'actions' and remaining anonymous to the AI.</p>
                 
-              </p>
-              <iframe
-                src="/documents/Stephen Purdue CV.pdf"
-                class="w-full h-[900px] rounded-lg border border-nord6/40"
-                title="Client Project: 'Slackers' PDF"
-              ></iframe>
+                <p class="mb-4">The primary goal is to develop an MVP vertical slice, featuring core features that can be expanded upon in next semester's final project. This project will be created using Unity, and both a game design document and a Kanban board will be utilised to track the development cycle and manage time throughout the module. This development cycle strikes a balance between needs and wants, promoting sustainable choices that align with Sustainable Development Goal 12 <a href="https://sdgs.un.org/goals/goal12" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">(United Nations, 2024)</a> by encouraging responsible production and development.</p>
+                
+                <p class="mb-4">The brief provided was open to interpretation, and left workplace setting selection to developers, specifying the game should involve disguised 'aliens' within human workplaces, with chaos and sabotage mechanics. This presented me with an opportunity to express creative freedom, allowing me to select an environment which would best convey my design methods, making use of available assets. Initial ideas focused on the most obvious interpretation, an office environment with direct office culture and sabotage opportunities (coffee machines, printers, and computers).</p>
+                
+                <p class="mb-4">However, two key factors caused a shift towards a more open environment.</p>
+                
+                <ul class="list-disc pl-8 mb-4 space-y-2">
+                  <li><strong>Asset Availability:</strong> The Tiny Swords asset pack had a cohesive art style, contained medieval fantasy sprites perfect for my idea, rather than modern office assets, and was license-free.</li>
+                  <li><strong>Environmental Complexity:</strong> Office environments take time to create well; this would have involved much more asset placement than was used in the finished slice, and would have lowered the amount of time to be spent on polished mechanics.</li>
+                </ul>
+                
+                <p class="mb-4"><strong>Trello Board:</strong> <a href="https://trello.com/b/KgaZg9SP/slackers" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://trello.com/b/KgaZg9SP/slackers</a></p>
+              </section>
+
+              <!-- Contents -->
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4">Contents</h2>
+                <ol class="list-decimal pl-8 space-y-1">
+                  <li>Pre-Production</li>
+                  <li>Research</li>
+                  <li>Development</li>
+                  <li>Summary</li>
+                  <li>References</li>
+                </ol>
+              </section>
+
+              <!-- Research -->
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4">Research</h2>
+                <p class="mb-4">Before beginning development, I conducted a comparative analysis of current titles in the chaos gameplay genre to identify design patterns that create engaging player experiences. This research went on to directly inform design choices and assets used in development.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Chaos & Sabotage Mechanics</h3>
+                <p class="mb-4">The chaos gameplay genre relates to games in which player actions create disorder and escalating chaos, which have a direct impact on the world. Three games stood out for understanding how these mechanics function successfully: Among Us (InnerSloth, 2018), Overcooked (Ghost Town Games, 2016), and Untitled Goose Game (House House, 2019). Each of these games has a different approach to chaos systems, offering distinctly different gameplay and lessons that can be applicable to Slackers.</p>
+                
+                <p class="mb-4">Among Us shows how sabotage can serve multiple purposes beyond immediate disruption. For example, when a player sabotages oxygen or lighting systems, both environmental and social chaos are created. The affected systems need to be fixed, and crew members must decide whether to call an emergency meeting or continue with tasks, weakening group coordination and potentially leading to further chaos. Critically, Among Us sabotage actions rely on cooldown timers to prevent overuse and encourage more strategic timing, which can have a direct impact on certain events. The game's success shows that sabotage gameplay remains engaging, despite there being only six sabotage actions, provided that each is used strategically. For Slackers, this informed my decision to create one or two well-polished mechanics, rather than numerous weak ones. This reinforces the idea of creating a polished vertical slice, rather than a weaker full title.</p>
+                
+                <p class="mb-4">However, Among Us mostly relies on social deception between other players, translating this into a single-player game required a look at how chaos can function without social dynamics. Overcooked informed how cooperative chaos can function through environmental design rather than deception alone. Overcooked creates disorder through time pressure and spatial constraints; players must navigate through tight environments while managing multiple tasks on a strict schedule (Ghost Town Games, 2016). This game compounds simple mechanics into complex situations by layering them together with added pressure from a timer. I read into the (MDA) Mechanics, Dynamics, Aesthetics framework, where simple mechanics, such as chopping vegetables, produce dynamics such as team coordination, to generate the aesthetic experience fast paced cooperation (Hunicke et al. 2004)</p>
+                
+                <p class="mb-4">This helped to inform Slackers, as it was clear that sabotage mechanics should have cascading effects and consequences, rather than isolated ones. For example, interacting with an item in-game shouldn't only create audio and visual effects, but also attract nearby enemies. This opens up room for secondary sabotage opportunities and experimenting with various mechanics to have intentional and unintentional gameplay effects.</p>
+                
+                <p class="mb-4">Untitled Goose Game gave insight into how sabotage works in asymmetric power dynamics. The player runs within systems designed to constrain them, eg, gardens have fences, and shopkeepers will chase intruders, etc. This creates satisfying gameplay because the player operates from a position of weakness, allowing for satisfying and hilarious in-game actions, such as stealing a rake, prompting a response from an NPC, and turning a simple interaction into comedic sabotage.</p>
+                
+                <p class="mb-4">This informed Slackers' AI system; the player isn't more powerful than enemies to the point where it isn't engaging. Tension is created by avoiding detection while completing objectives. Schell's Lens of Challenge states that difficulty should arise from making decisions under pressure and adapting to ongoing changes (Schell, 2008). Slackers utilise this by having NPC patrol routes, allowing players to time decisions and actions.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Stealth & Detection Systems</h3>
+                <p class="mb-4">Implementing an effective AI detection required understanding how stealth games balance visibility, tension and player autonomy. Traditional stealth titles such as Metal Gear Solid employ cone-of-vision mechanics where players are detected when entering an enemy's sight range, which is typically visualised by an on-screen indicator. This provides clear feedback about hostile areas, allowing players to make informed decisions, rather than guessing what triggers detection.</p>
+                
+                <p class="mb-4">These insights directly informed the detection system used in Slackers, as detailed in the development section's AI Detection System breakdown.</p>
+              </section>
+
+              <!-- Production -->
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Production</h2>
+                <p class="mb-4">During this vertical slice, I played the role of both Game Developer & Producer, guiding both the development and production of the entire product. This allowed me to create assets and systems on a schedule that worked for me, and I was able to maintain a level of control over all aspects of development.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Ethical & Sustainable Considerations</h3>
+                <p class="mb-4">Throughout production, I aimed to link closely to the Sustainable Development Goals by following these key steps:</p>
+                
+                <ul class="list-disc pl-8 mb-4 space-y-2">
+                  <li>Reusing and adapting assets, rather than creating new ones, saves 20 - 40 hours of complete asset creation.</li>
+                  <li>Prioritising industry-standard coding practices to ensure low impact.</li>
+                  <li>Avoiding inflation of certain features to keep the game clean.</li>
+                  <li>Ensuring the game didn't have any harmful stereotypes and making sure the game was open to everyone was achieved by keeping the game purely fictional.</li>
+                </ul>
+                
+                <p class="mb-4">Development prioritised code reusability to minimise technical debt; this involved using inheritance so that core interaction logic didn't have to be rewritten for certain aspects of the slice. These steps helped ensure alignment with the ethical values and qualities of game development, as outlined throughout the SDGs.</p>
+                
+                <p class="mb-4">Reusing assets in the Tiny Swords pack eliminated approximately 20-40 hours of custom sprite creation and learning; this also reduces computational resources used in asset creation and development. This decision aligns with SDG 12.2's principle of sustainable resource management.</p>
+                
+                <p class="mb-4">However, time constraints led to technical debt that will require future changes. Some values were hardcoded, such as damage numbers and flipping scales. This could create a future burden to development and maintenance should this slice be taken further. Code documentation in GitHub and Unity lacks sufficient information for external developers to understand how I worked, which could slow down future collaborative development.</p>
+                
+                <p class="mb-4">Creating comedy about workplace environments and sabotage has ethical risks that require consideration; some harmful stereotypes could have been insinuated had I gone with a typical office environment. Therefore, I chose to go for an absurd medieval theme with no distinguishable stereotypes.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Needs vs. Wants</h3>
+                <table class="w-full border-collapse border border-nord6/40 rounded-lg overflow-hidden">
+                  <thead>
+                    <tr class="bg-nord9 text-white">
+                      <th class="px-4 py-3 text-left border-b border-nord6/40">Need/Want</th>
+                      <th class="px-4 py-3 text-left border-b border-nord6/40">Why?</th>
+                      <th class="px-4 py-3 text-left border-b border-nord6/40">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-nord6/40 bg-nord3/20">
+                      <td class="px-4 py-2 text-white">AI Chase Mechanics (Need)</td>
+                      <td class="px-4 py-2">Part of the core gameplay loop.</td>
+                      <td class="px-4 py-2"><span class="px-3 py-1 rounded-full bg-nord14 text-nord0 text-sm font-semibold">Completed</span></td>
+                    </tr>
+                    <tr class="border-b border-nord6/40">
+                      <td class="px-4 py-2 text-white">Health System (Need)</td>
+                      <td class="px-4 py-2">Visualises consequences of detection.</td>
+                      <td class="px-4 py-2"><span class="px-3 py-1 rounded-full bg-nord14 text-nord0 text-sm font-semibold">Completed</span></td>
+                    </tr>
+                    <tr class="border-b border-nord6/40 bg-nord3/20">
+                      <td class="px-4 py-2 text-white">Disguise System (Need)</td>
+                      <td class="px-4 py-2">Core brief requirement.</td>
+                      <td class="px-4 py-2"><span class="px-3 py-1 rounded-full bg-nord14 text-nord0 text-sm font-semibold">Completed</span></td>
+                    </tr>
+                    <tr class="border-b border-nord6/40">
+                      <td class="px-4 py-2 text-white">Sabotage System (Need)</td>
+                      <td class="px-4 py-2">Core brief requirement.</td>
+                      <td class="px-4 py-2"><span class="px-3 py-1 rounded-full bg-nord13 text-nord0 text-sm font-semibold">On-Hold</span></td>
+                    </tr>
+                    <tr class="bg-nord3/20">
+                      <td class="px-4 py-2 text-white">Tutorial System (Want)</td>
+                      <td class="px-4 py-2">Critical to player accessibility, but not as important as core requirements.</td>
+                      <td class="px-4 py-2"><span class="px-3 py-1 rounded-full bg-nord13 text-nord0 text-sm font-semibold">On-Hold</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <p class="mb-4 mt-4">I had initially set the Tutorial as a need and was to be one of the first aspects of the game completed after the core gameplay loop. However, since the game was only a vertical slice with only one or two mechanics, I included on-screen queues to help with accessibility, removing the need for a tutorial.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Time Management</h3>
+                <p class="mb-4">Game development is a complex process, requiring meticulous detail and extreme flexibility. I chose to use a Kanban, which uses online planning tools such as Trello to manage tasks and track progress (Atlassian, 2024). I felt this was the best option for time management, as it uses a visual interface to track every aspect of the game development cycle. Kanban was chosen rather than Scrum because it gave a more visual structure for planning development, which is beneficial for a solo developer. Once the board was created, I added different categories, setting the primary focus on building a working product before addressing any bug fixes or further development. This ensured a prototype could be created much quicker, leaving more time for adding extras and fixing any bugs. This structure allowed for an organised and clear workflow that ensured smooth production and is similar to industry-standard planning.</p>
+                
+                <p class="mb-4">The board was split into 7 columns:</p>
+                
+                <ul class="list-disc pl-8 mb-4 space-y-2">
+                  <li><strong>Goals</strong> - Important tasks critical to the MVP.</li>
+                  <li><strong>Backlog / To-do</strong> - All important development tasks ranging from research to testing.</li>
+                  <li><strong>In Progress</strong> - Tasks that are currently being completed.</li>
+                  <li><strong>Completed</strong> - Tasks that were completed and no longer in development.</li>
+                  <li><strong>On Hold</strong> - Tasks that couldn't be completed pending other features.</li>
+                  <li><strong>Bugs</strong> - List of bugs yet to be fixed, and logged during playtesting.</li>
+                  <li><strong>Extras</strong> - Smaller features to be added if there was any time left over.</li>
+                </ul>
+                
+                <p class="mb-4">The most important task was identifying current bugs and backlog of tasks, which required an immense amount of time testing the game, each mechanic and reviewing all scripts and assets to ensure they worked as intended.</p>
+                
+                <!-- First Slideshow -->
+                <div class="slideshow-container rounded-lg overflow-hidden border border-nord6/40 my-6" data-slideshow="intro">
+                  <div class="slideshow-wrapper relative">
+                    <div class="slideshow-slide active">
+                      <a href="/images/Trello Board.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Trello Board.png" alt="Slackers Introduction Slide 1" class="w-full h-96 object-cover cursor-pointer">
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Changesets.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Changesets.png" alt="Slackers Introduction Slide 2" class="w-full h-96 object-cover cursor-pointer">
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Tilemap v1.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Tilemap v1.png" alt="Slackers Introduction Slide 3" class="w-full h-96 object-cover cursor-pointer">
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Tilemap v2.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Tilemap v2.png" alt="Slackers Introduction Slide 4" class="w-full h-96 object-cover cursor-pointer">
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Final Map Layout.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Final Map Layout.png" alt="Slackers Introduction Slide 5" class="w-full h-96 object-cover cursor-pointer">
+                      </a>
+                    </div>
+                    <button class="slideshow-prev" aria-label="Previous slide">&#10094;</button>
+                    <button class="slideshow-next" aria-label="Next slide">&#10095;</button>
+                  </div>
+                  <div class="slideshow-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                  </div>
+                </div>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">MVP Scope</h3>
+                <p class="mb-4">Before starting the development process, I set out goals for the Minimum Viable Product. This was an important stage of production that involved analysing the client brief and highlighting essential mechanics that required high priority. This ensured there was a playable prototype. The purpose of creating the MVP was to capture the game's core mechanics in a clean and polished playable slice. This included systems such as 'Sabotage' or 'Destroy', as well as basic enemy AI detection, to add some challenge.</p>
+                
+                <p class="mb-4">Throughout the development pipeline, I revisited the brief and constantly evaluated whether the slice I was creating met all the key criteria. If it didn't, I stopped to figure out why and made changes accordingly, ensuring that the client brief was met.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Game Design Document & GitHub</h3>
+                <p class="mb-4">During development, I kept track using a comprehensive game design document, which contains all relevant information about the vertical slice, such as UI, enemy interactions, and audio; this was important so the project could stay on track, allowing time for bug fixing and extra details.</p>
+                
+                <p class="mb-4">The game design document can be viewed here.</p>
+                
+                <p class="mb-4">GitHub was also used as a backup for storage and version control. I felt this was more efficient than Unity Version Control, as I am more familiar with Git; this also acts as a 'portfolio' to showcase the project to other developers.</p>
+                
+                <p class="mb-4">The GitHub repository can be viewed here.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Communication</h3>
+                <p class="mb-4">Given the independent nature of the brief, formal client communication outside of development was limited. To help compensate for this constraint, I used self-evaluation at regular intervals to assess my progression and time management. This involved regular playtesting to identify and eliminate bugs, as well as ongoing review of the brief to ensure alignment with client needs and requirements.</p>
+                
+                <p class="mb-4">Tutorial sessions over the semester enabled me to ask questions about the brief and receive suggestions as to what to implement and how this could be achieved; these focused on technical aspects rather than specific design questions or pointers.</p>
+                
+                <p class="mb-4">The primary limitation of communication as an absence of engagement with the client (RaRa Games). Typical practice requires regular checkpoints and discussions in order to ensure the product meets client expectations, needs, and wants.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Accessibility</h3>
+                <p class="mb-4">Accessibility was an important consideration throughout the design and development of Slackers. Although it wasn't a high priority, it was tackled through using clear visual communication practices, a readable user interface design, and simple interaction systems to ensure the game was easy to play and open to all players.</p>
+                
+                <p class="mb-4">High contrast colours and a consistent art style were used to increase visual clarity and ensure complete visibility. I chose to keep the user interface as text to ensure it was visible against the bright background. The characters and NPCs are also clearly distinguishable from each other through different colours and sprites.</p>
+                
+                <p class="mb-4">The disguise system also increases overall accessibility by providing players with a forgiving stealth mechanic, changing disguises resets enemy detection states, allowing players to recover from mistakes rather than facing repeated failure. This supports inclusive play by reducing difficulty, aligning with Schell's lens of challenge, which says that meaningful decision-making is favourable over mechanical punishment.</p>
+                
+                <p class="mb-4">However, several accessibility concerns remain due to time constraints and the overall scope of the brief. The game doesn't have any changeable colourblind, difficulty or audio settings, as well as lacking rebindable controls. Additionally, font size and UI scaling are fixed and cannot be changed; this could present barriers for some users.</p>
+                
+                <p class="mb-4">Future development would benefit significantly from adding accessibility earlier in the development pipeline, rather than leaving it until last. Improvements would include an adjustable difficulty setting, remappable controls, and scalable UI components. This could involve accessibility beta testing with a diverse group to determine what features are a priority and should be added first.</p>
+              </section>
+
+              <!-- Development -->
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Development</h2>
+                <p class="mb-4">When starting the project, one of the most important early decisions involved selecting the right visual assets. For this project, I chose to use the 'Tiny Swords' asset pack found on itch.io, a platform for indie developers to share assets. This pack stood out because of its beautiful art aesthetic, ideal for slackers. This pack was free and did not require any artist accreditation.</p>
+                
+                <p class="mb-4">During Development, I used Unity Version Control to track and roll back changes. Should problems arise during the development cycle, more than 50 changes were logged, ranging from new systems to bug fixes. Documentation was kept within Unity, so detailed titles were used to outline changes.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">World Building</h3>
+                <p class="mb-4">When creating the environment, I chose to use a 2D tilemap. This was to keep the workflow manageable and remove the obstacle of having to create and reuse a large number of assets. This worked well for Slackers, as I was able to put more time into creating a polished mechanic, rather than a detailed environment.</p>
+                
+                <p class="mb-4">I chose to use Unity's tilemap system due to its simplicity and accessibility. Layers were created for Ground, Elevation, Interactive Objects, and Decorations, in order for collision to work correctly. The elevation was extremely simple, using a Tilemap Collider in order to detect player collision.</p>
+                
+                <p class="mb-4">The first iteration featured an extremely open environment, prioritising a working environment to test player movement and collision. This evolved into a more functional world, with distinct zones. Zone-based architecture was key in providing spatial rhythm, alternating between quiet and exposed areas, creating tension and altering player movement. Decorations were left for later in the development cycle, as priority was placed on getting base mechanics working, rather than small details.</p>
+                
+                <p class="mb-4">Future development would benefit from earlier paper prototyping before implementing a complete tilemap, as the redesign showed substantial wasted effort. The final environment successfully balances visual fidelity with gameplay opportunities and a zone-based approach.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Tilemap System</h3>
+                <p class="mb-4">The environment's tilemap system required balancing visual depth and functional gameplay collision. This was implemented using Unity's tilemap layering system across eight distinct layers organised by rendering order.</p>
+                
+                <ul class="list-disc pl-8 mb-4 space-y-2">
+                  <li><strong>Water (-10):</strong> Background water decoration.</li>
+                  <li><strong>Rocks (-2):</strong> Decorative rocks placed in the ocean.</li>
+                  <li><strong>Ground (-1):</strong> Base floor tiles, no collision as a walkable surface.</li>
+                  <li><strong>Non-Collision-Low (0):</strong> Decorative paths, plants, static objects.</li>
+                  <li><strong>Collision-Low (0):</strong> Interactive obstacles using a Tilemap Collider 2D for player detection.</li>
+                  <li><strong>Collision-High (10):</strong> Elevated terrain.</li>
+                  <li><strong>Non-Collision-High (10):</strong> Decorative paths, plants, static objects on elevation.</li>
+                  <li><strong>MountainBoundary (0):</strong> Outer boundary of mountains to prevent falling.</li>
+                </ul>
+                
+                <p class="mb-4">I faced a technical challenge with elevated terrain boundaries. Unity's automatic tilemap collider creates collision along tile edges, but doesn't inherently prevent players from moving from high to low elevation areas in the 2D top-down perspective.</p>
+                
+                <p class="mb-4">Rather than solving this through configuring proper 2D physics, I implemented a basic workaround: manually placing invisible GameObject boxes with BoxCollider components attached; they were then made invisible to stop players from moving into void areas. This did, however, require placing each object manually, surrounding each elevated area. I chose to stick with this solution, as 'if it works and doesn't break, ship it'.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">AI Detection System</h3>
+                <p class="mb-4">Following the stealth system design principles identified during research, the implemented AI detection system focuses on balanced challenge and simplified mechanics, which are more appropriate for a polished vertical slice given the time constraints.</p>
+                
+                <p class="mb-4">The AI detection system uses Unity's 2D trigger collision to create proximity-based chase behaviour. This favours simplicity over a more complex detection system. Each NPC possesses a CircleCollider2D trigger zone with a 4-meter radius outlining the detection range. When the player enters this area, OnTriggerEnter2D() executes, storing the player's transform reference and transitioning the NPC from Idle to Chasing via an enum-based state machine. During chase, FixedUpdate() calculates a direction vector from NPC to player and applies velocity to move towards the player. When starting, enemies were too fast and could outrun the player, causing an unfair scenario. Learning from this, I chose to set the default speed as 4 per second, so that the enemy is challenging, yet could be outrun. The NPC's sprite automatically flips based on the player's position to prevent it from facing the wrong direction. The initial attempts at creating this component were challenging and resulted in inverted flip logic, as each attempt at adding a new component to the script would cause it to start flipping to the wrong direction. This was fixed by hard-coding values so that it is facing either 1 or -1.</p>
+                
+                <p class="mb-4">When the player exits the detection zone, OnTriggerExit2D() reduces the NPC's velocity to zero, clearing the player reference and returning to an Idle state. This is managed by Unity's animator component, with the ChangeState() method managing the animation boolean values: isIdle & isChasing. The isTrigger based approach provides clear detection for enemies, allowing them to remain idle or chase based on player proximity. When testing this system, the initial detection range was reduced from 7 to 4, as it was a bit too sensitive and would sometimes detect players before they were even on-screen.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Core Gameplay Mechanics</h3>
+                <p class="mb-4">My interpretation of the brief involved creating an outdoor goblin mine working environment, under siege by a band of crusaders. I felt this worked extremely well with the chosen art style and brief, as it allowed me to create a basic environment and focus more on mechanics, rather than creating a detailed indoor office.</p>
+                
+                <p class="mb-4">The disguise change mechanic is the game's primary stealth tool and directly links to the brief's core requirement for alien operatives to maintain cover while executing workplace sabotage. This system allows players to reset enemy detection states by changing character sprites at the 'Goblin Hut', providing a method of remaining anonymous. Rather than focus on creating multiple points, I chose to provide one disguise station and ensured that it was working properly.</p>
+
+              <!-- Second Slideshow -->
+              <div class="slideshow-container rounded-lg overflow-hidden border border-nord6/40 my-6" data-slideshow="dev">
+                <div class="slideshow-wrapper relative">
+                  <div class="slideshow-slide active">
+                    <a href="/images/Enemy_Collision_1.png" target="_blank" rel="noopener noreferrer">
+                      <img src="/images/Enemy_Collision_1.png" alt="Slackers Development Slide 1" class="w-full h-96 object-cover cursor-pointer">
+                    </a>
+                  </div>
+                  <div class="slideshow-slide">
+                    <a href="/images/Enemy_Collision_2.png" target="_blank" rel="noopener noreferrer">
+                      <img src="/images/Enemy_Collision_2.png" alt="Slackers Development Slide 2" class="w-full h-96 object-cover cursor-pointer">
+                    </a>
+                  </div>
+                   <div class="slideshow-slide">
+                    <a href="/images/Enemy_Collision_2.png" target="_blank" rel="noopener noreferrer">
+                      <img src="/images/Animator.png" alt="Slackers Development Slide 2" class="w-full h-96 object-cover cursor-pointer">
+                    </a>
+                  </div>
+                  <div class="slideshow-slide">
+                    <a href="/images/Enemy_Torch_Animation_Tree.png" target="_blank" rel="noopener noreferrer">
+                      <img src="/images/Enemy_Torch_Animation_Tree.png" alt="Slackers Development Slide 3" class="w-full h-96 object-cover cursor-pointer">
+                    </a>
+                  </div>
+                  <div class="slideshow-slide">
+                    <a href="/images/PlayerHealth.png" target="_blank" rel="noopener noreferrer">
+                      <img src="/images/PlayerHealth.png" alt="Slackers Development Slide 4" class="w-full h-96 object-cover cursor-pointer">
+                    </a>
+                  </div>
+                  <div class="slideshow-slide">
+                    <a href="/images/" target="_blank" rel="noopener noreferrer">
+                      <img src="/images/Mountain Boundaries.png" alt="Slackers Development Slide 5" class="w-full h-96 object-cover cursor-pointer">
+                    </a>
+                  </div>
+                  <div class="slideshow-slide">
+                    <a href="/images/" target="_blank" rel="noopener noreferrer">
+                      <img src="/images/Disguise Change(2).gif" alt="Slackers Development Slide 6" class="w-full h-96 object-cover cursor-pointer">
+                    </a>
+                  </div>
+                  <button class="slideshow-prev" aria-label="Previous slide">&#10094;</button>
+                  <button class="slideshow-next" aria-label="Next slide">&#10095;</button>
+                </div>
+                <div class="slideshow-dots">
+                  <span class="dot active" data-slide="0"></span>
+                  <span class="dot" data-slide="1"></span>
+                  <span class="dot" data-slide="2"></span>
+                  <span class="dot" data-slide="3"></span>
+                  <span class="dot" data-slide="4"></span>
+                  <span class="dot" data-slide="5"></span>
+                </div>
+              </div>
+
+                <p class="mb-4">The disguise system runs through a static interaction point positioned close to the mine environment. When the character enters the huts four meter trigger radius, an on-screen prompt appears: 'Press [E] to Change Disguise'. Activating this triggers an instant sprite swap, cycling the player's sprite between one of three available outfits: the default Knight, a Goblin worker, and a Peasant Villager. Each is unique from the others, and provide choice when attempting to change disguise. Once the player activates the change, the player's SpriteRenderer is updated to the new sprite, and a reset command is sent to the Enemy_Movement script to reset their detection states.</p>
+                
+                <p class="mb-4">Enemies that are currently chasing a player when a disguise change is activated are subject to an immediate state transition, their velocities are zeroed, and their state machines execute a forced return to the idle state. This creates a sense of awareness loss, allowing the player to resume as if they had never been spotted. I chose this way, rather than use gradual detection states, as it offers a consistent result that works every time.</p>
+                
+                <p class="mb-4">In Conclusion, the disguise change mechanic is successful in providing a concrete system that addresses the brief's stealth requirements, because there is an on-screen prompt, players can use this to plan and change disguises as needed. For a vertical slice focused on polished mechanics done well rather than many mechanics done poorly, this is an excellent addition to the core gameplay loop.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Health System and UI</h3>
+                <p class="mb-4">The health system and user interface were another key mechanic to be worked on. The health mechanics were created from scratch using the Player_Health and Enemy_Combat scripts.</p>
+                
+                <p class="mb-4">To start, a RigidBody2D was added to the Enemy_Torch so that damage could be added on contact. In Player_Health, two variables were used to decide maxHealth and currentHealth; these were then called in a public variable called ChangeHealth, which detected any damage and changed health accordingly. It also set the Player GameObject to false when health reached 0. Enemy_Combat was extremely simple, declaring a public integer for damage and setting it to 1, and changing the collided player's health by -1 upon impact.</p>
+                
+                <p class="mb-4">The UI was created using an Image Canvas, anchored to the top left of the screen. The sprite used was a horizontal banner image from the same asset pack. This was relatively easy to implement, simply requiring a reference in the PlayerHealth script, as well as an animation to add the 'bounce' effect upon health loss.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Character Animation</h3>
+                <p class="mb-4">Each entity was animated using Unity's built-in animator tool, splicing each sprite's PNGs together and spreading them across 30 - 60 frames in order to create a Zelda-like animation. Each had two base animations: Idle and Running.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Bug Fixing</h3>
+                <p class="mb-4">During development, one bug I faced early on was the main player character falling through the map after applying a RigidBody2D component. This was particularly frustrating, as it prevented any meaningful testing or progress, due to the character falling out of bounds. The default gravity scale was causing the character to fall quicker than the collision detection system could register contact with the ground, as well as the character's rotation not being constrained, causing unwanted rotation and tilting. However, it was an easy fix; in the Unity Inspector, the gravity scale was reduced to zero, and I also froze the z-rotation to prevent any unwanted rotation resulting from in-game actions.</p>
+                
+                <p class="mb-4">Another bug was found during the creation of character movement. When the movement button was released, the character continued to move for a short time. This was fixed by changing Input.GetAxis to Input.GetAxisRaw. This worked because of Input.GetAxis tries to slow the movement gradually when using a lower gravity setting; the latter doesn't do this, allowing for the character to cease movement immediately upon button release.</p>
+              </section>
+
+              <!-- Evaluation -->
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Evaluation</h2>
+                <p class="mb-4">The most significant limitation of this project was the absence of external evaluation and playtesting, which fundamentally undermined the ability to check design effectiveness and highlighted a critical failure, unlike in professional practice. While the developed prototype represents competent core systems, the lack of structured feedback leaves questions about player experience, design balance and accessibility unanswered.</p>
+                
+                <p class="mb-4">Typically, professional game development requires external iterative playtesting throughout the development cycle, even for a slice of gameplay. For Slackers, this would have been conducted in multiple testing phases with data collection that could be analysed and actioned.</p>
+                
+                <p class="mb-4">Early-stage testing should have involved prototype testing with 3-4 external participants to help validate the core loop. Questions would have been asked, such as: Do players understand the objective? Is there a balance between detection and anonymity? This would have helped with idea iteration before committing development time to specific areas.</p>
+                
+                <p class="mb-4">Mid-stage testing would have required 6-8 participants and an evaluation of the whole prototype. Players would have been observed on how they interacted with the environment, difficult areas, and any bugs that appeared. Data would have been collected and then acted upon before moving into the polish / bug-fixing phase of development.</p>
+                
+                <p class="mb-4">Late-stage testing would have involved beta testing with 10-20 participants to identify accessibility issues and bugs. Following typical game development practices, this data would have been used post-release, implementing fixes after launch.</p>
+                
+                <p class="mb-4">While this is a significant gap in development, the technical skills gained during this project are invaluable (Animation, Scripting, Environment Design) and will help create a well-polished final project.</p>
+              </section>
+
+              <!-- Final Word -->
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Final Word</h2>
+                <p class="mb-4">The Slackers prototype successfully demonstrates the feasibility of chaos gameplay within the constraints of an MVP vertical slice. Through systematic iteration, the project delivers a working prototype that highlights mechanics required in the brief, combining 'sabotage' and 'stealth' systems in order to create engaging gameplay when properly balanced and designed. Working on this project in conjunction with RaRa Games this semester has been an invaluable experience, resulting in a full playable vertical slice. This opportunity allowed me to enhance my technical skills in environment creation, animation, and optimisation.</p>
+                
+                <p class="mb-4">Primary strengths lie in project management and technical implementation. The Kanban methodology with Trello tracking allowed for organised development, prioritising MVP critical features while putting secondary elements on the backlog, to maintain effective time management. Zone-based environmental architecture creates strategic and tense gameplay, ensuring the player makes smart choices based on environmental hazards. Documentation practices, including a comprehensive Game Design Document and version control workflow, reflect industry standard practices and demonstrate professional development practices applicable to real projects.</p>
+                
+                <p class="mb-4">While not all the mechanics were created, I am pleased that a polished chase and disguise mechanic could be created and implemented effectively, this does however link closely to the brief, by creating polished mechanics, rather than mediocre ones at an attempt to meet all the requirements. The experience gained from this project will feed directly into the final project for next semester, allowing me to create a full game rather than just a slice of gameplay.</p>
+              </section>
+
+              <!-- References -->
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">References</h2>
+                <div class="space-y-3 pl-4">
+                  <p>United Nations (2025). Goal 12 | Ensure sustainable consumption and production patterns. [online] United Nations. Available at: <a href="https://sdgs.un.org/goals/goal12" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://sdgs.un.org/goals/goal12</a>.</p>
+                  
+                  <p>Radigan, D. (2024). What is Kanban? [online] Atlassian. Available at: <a href="https://www.atlassian.com/agile/kanban" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://www.atlassian.com/agile/kanban</a>.</p>
+                  
+                  <p>Hunicke, R., Leblanc, M. and Zubek, R. (2004). (PDF) MDA: A formal approach to game design and game research. [online] ResearchGate. Available at: <a href="https://www.researchgate.net/publication/228884866_MDA_A_Formal_Approach_to_Game_Design_and_Game_Research" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://www.researchgate.net/publication/228884866_MDA_A_Formal_Approach_to_Game_Design_and_Game_Research</a>.</p>
+                  
+                  <p>Schell, J. (2008). <em>The Art of Game Design</em>. [online] Available at: <a href="https://www.inventoridigiochi.it/wp-content/uploads/2020/07/art-of-game-design.pdf" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://www.inventoridigiochi.it/wp-content/uploads/2020/07/art-of-game-design.pdf</a>.</p>
+                  
+                  <p>itch.io. (2026). Tiny Swords. [online] Available at: <a href="https://pixelfrog-assets.itch.io/tiny-swords?download" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://pixelfrog-assets.itch.io/tiny-swords?download</a></p>
+                  
+                  <p>InnerSloth (2018) <em>Among Us</em>. InnerSloth. (Video Game)</p>
+                  
+                  <p>Ghost Town Games (2016) <em>Overcooked</em>. Team17. (Video Game)</p>
+                  
+                  <p>House House (2019) <em>Untitled Goose Game</em>. Panic. (Video Game)</p>
+                  
+                  <p>Konami (1998) <em>Metal Gear Solid</em>. Konami (Video Game)</p>
+                </div>
+              </section>
+
+              <!-- Bibliography -->
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Bibliography</h2>
+                <div class="space-y-3 pl-4">
+                  <p>Unity Technologies (2019). Unity - Manual: Unity User Manual (2019.2). [online] Unity3d.com. Available at: <a href="https://docs.unity3d.com/Manual/index.html" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://docs.unity3d.com/Manual/index.html</a>.</p>
+                  
+                  <p>Unity Learn. (n.d.). Importing Assets. [online] Available at: <a href="https://learn.unity.com/tutorial/importing-assets" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://learn.unity.com/tutorial/importing-assets</a>.</p>
+                  
+                  <p>Unity Learn. (2019). Unity Learn. [online] Available at: <a href="https://learn.unity.com/tutorial/animating-a-sprite-with-the-2d-animation-package" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://learn.unity.com/tutorial/animating-a-sprite-with-the-2d-animation-package</a></p>
+                  
+                  <p>Unity Learn. (2019). Unity Learn. [online] Available at: <a href="https://learn.unity.com/tutorial/working-with-hexagonal-and-isometric-tile-shapes" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://learn.unity.com/tutorial/working-with-hexagonal-and-isometric-tile-shapes</a></p>
+                  
+                  <p>Unity Learn. (2019). Unity Learn. [online] Available at: <a href="https://learn.unity.com/tutorial/introduction-to-tilemaps-2019-3" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://learn.unity.com/tutorial/introduction-to-tilemaps-2019-3</a></p>
+                  
+                  <p>Unity Learn. (2019). Unity Learn. [online] Available at: <a href="https://learn.unity.com/tutorial/applying-2d-colliders-for-physics-interactions" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://learn.unity.com/tutorial/applying-2d-colliders-for-physics-interactions</a></p>
+                  
+                  <p>Unity Learn. (2019). Unity Learn. [online] Available at: <a href="https://learn.unity.com/tutorial/controlling-unity-camera-behaviour-2019-3" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://learn.unity.com/tutorial/controlling-unity-camera-behaviour-2019-3</a></p>
+                  
+                  <p>Unity Learn. (n.d.). Beginner Scripting. [online] Available at: <a href="https://learn.unity.com/course/beginner-scripting" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://learn.unity.com/course/beginner-scripting</a>.</p>
+                  
+                  <p>itch.io. (n.d.). Pixel Frog. [online] Available at: <a href="https://pixelfrog-assets.itch.io/" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://pixelfrog-assets.itch.io/</a>.</p>
+                  
+                  <p>Haki (2023). Building a State Machine in Unity With C# - Haki - Medium. [online] Medium. Available at: <a href="https://medium.com/@jojackblack/building-a-state-machine-in-unity-with-c-b1c7c9c80a04" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://medium.com/@jojackblack/building-a-state-machine-in-unity-with-c-b1c7c9c80a04</a>.</p>
+                </div>
+              </section>
             </div>
           </details>
           <details
@@ -258,6 +673,107 @@ import {
       iframe {
         background-color: #4C566A; /* nord4 */
       }
+    }
+
+    /* Slackers content styling */
+    .slackers-content h2 {
+      color: #88C0D0 !important; /* nord9 */
+    }
+    
+    .slackers-content h3 {
+      color: #81A1C1 !important; /* nord10 */
+    }
+    
+    .slackers-content a {
+      color: #88C0D0; /* nord9 */
+      text-decoration: underline;
+    }
+    
+    .slackers-content a:hover {
+      color: #81A1C1; /* nord10 */
+    }
+
+    /* Slideshow styling */
+    .slideshow-container {
+      position: relative;
+      background-color: #2E3440; /* nord0 */
+    }
+    
+    .slideshow-wrapper {
+      position: relative;
+      min-height: 24rem;
+    }
+    
+    .slideshow-slide {
+      display: none;
+      width: 100%;
+    }
+    
+    .slideshow-slide.active {
+      display: block;
+    }
+    
+    .slideshow-slide img {
+      display: block;
+      width: 100%;
+      height: 24rem;
+      object-fit: cover;
+      background-color: #3B4252; /* nord1 */
+    }
+    
+    .slideshow-prev,
+    .slideshow-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(46, 52, 64, 0.7); /* nord0 with opacity */
+      color: #ECEFF4; /* nord6 */
+      border: none;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: all 0.3s;
+      z-index: 10;
+    }
+    
+    .slideshow-prev:hover,
+    .slideshow-next:hover {
+      background-color: rgba(136, 192, 208, 0.9); /* nord9 with opacity */
+      color: #2E3440; /* nord0 */
+    }
+    
+    .slideshow-prev {
+      left: 0;
+    }
+    
+    .slideshow-next {
+      right: 0;
+    }
+    
+    .slideshow-dots {
+      text-align: center;
+      padding: 1rem;
+      background-color: #2E3440; /* nord0 */
+    }
+    
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 4px;
+      background-color: #4C566A; /* nord3 */
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .dot:hover {
+      background-color: #5E81AC; /* nord10 */
+    }
+    
+    .dot.active {
+      background-color: #88C0D0; /* nord9 */
     }
   </style>
 
@@ -423,5 +939,65 @@ import {
       }
       return result;
     };
+
+    // Slideshow functionality
+    function initSlideshows() {
+      const slideshows = document.querySelectorAll('.slideshow-container');
+      
+      slideshows.forEach((slideshow) => {
+        let currentSlide = 0;
+        const slides = slideshow.querySelectorAll('.slideshow-slide');
+        const dots = slideshow.querySelectorAll('.dot');
+        const prevBtn = slideshow.querySelector('.slideshow-prev');
+        const nextBtn = slideshow.querySelector('.slideshow-next');
+        
+        function showSlide(n) {
+          if (n >= slides.length) {
+            currentSlide = 0;
+          } else if (n < 0) {
+            currentSlide = slides.length - 1;
+          } else {
+            currentSlide = n;
+          }
+          
+          slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+          });
+          
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+          });
+        }
+        
+        function nextSlide() {
+          showSlide(currentSlide + 1);
+        }
+        
+        function prevSlide() {
+          showSlide(currentSlide - 1);
+        }
+        
+        // Event listeners
+        if (prevBtn) {
+          prevBtn.addEventListener('click', prevSlide);
+        }
+        
+        if (nextBtn) {
+          nextBtn.addEventListener('click', nextSlide);
+        }
+        
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            showSlide(index);
+          });
+        });
+        
+        // Initialize first slide
+        showSlide(0);
+      });
+    }
+    
+    // Initialize slideshows after page loads
+    initSlideshows();
   </script>
 </Layout>
