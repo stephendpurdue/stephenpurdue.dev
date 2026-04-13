@@ -653,7 +653,7 @@ import {
                 >
               </div>
             </summary>
-            <div class="mt-6 space-y-6 text-base text-nord6 max-w-5xl mx-auto">
+            <div class="mt-6 space-y-6 text-base text-nord6 max-w-5xl mx-auto slackers-content synapse-content">
 
               <!-- Slideshow -->
               <div class="slideshow-container rounded-lg overflow-hidden border border-nord6/40 my-6" data-slideshow="project2">
@@ -700,24 +700,161 @@ import {
                 </div>
               </div>
 
+              <table class="w-full border-collapse border border-nord6/40 rounded-lg overflow-hidden">
+                <tbody>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Student Name:</td>
+                    <td class="px-4 py-2">Stephen Purdue</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Student ID:</td>
+                    <td class="px-4 py-2">2301815</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Course:</td>
+                    <td class="px-4 py-2">BSc, Computer Games Design &amp; Development.</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Module:</td>
+                    <td class="px-4 py-2">DM3107 - Major Research Project.</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Word Count:</td>
+                    <td class="px-4 py-2">2000 +10%</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Date of Submission:</td>
+                    <td class="px-4 py-2">15/05/2026 - Before 12:00pm</td>
+                  </tr>
+                </tbody>
+              </table>
+
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4">Project Overview</h2>
-                <p class="mb-4">Placeholder — add project overview here.</p>
+                <h2 class="text-3xl font-bold text-white mb-4">Table of Contents:</h2>
+                <ol class="list-decimal pl-8 space-y-1">
+                  <li>Introduction</li>
+                  <li>Time Management &amp; Contingencies</li>
+                  <li>Development</li>
+                  <li>Methodology</li>
+                  <li>Conclusion</li>
+                  <li>Appendices</li>
+                </ol>
               </section>
 
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Research</h2>
-                <p class="mb-4">Placeholder — add research content here.</p>
+                <h2 class="text-3xl font-bold text-white mb-4">Introduction:</h2>
+                <p class="mb-4">This project represents the practical continuation of theoretical research conducted in Semester 1: Failure as Feedback: Investigating the Role of Experimentation and Failure in Player Learning and Engagement within Systemic Games, which investigated the role of failure as a learning tool within systemic games. That research established a theoretical framework for further study through comparative analysis of four titles: Dark Souls 3 (FromSoftware, 2016), Celeste (Maddy Makes Games, 2018), Outer Wilds (Mobius Digital, 2019), and Breath of the Wild (Nintendo, 2017). This research identified key design principles that are successful in transforming failure from a punitive measure into productive and useful learning opportunities, supported by Constructivist Learning Theory (Piaget, 1972; Vygotsky, 1978), Kolb’s Learning Cycle (Kolb, 1984), Flow Theory (Csikszentmihalyi, 1990), and Self-Determination Theory (Deci &amp; Ryan, 1985).</p>
+                <p class="mb-4">This project delivers a polished vertical slice in Unity, featuring a third-person combat arena, a PPO-trained boss opponent with adaptive move sets, and real-time performance calibration to adjust attack patterns and overall aggression. This intentionally focuses on a single, well-crafted encounter to enable comprehensive training within the allotted time and to serve as a proof of concept that machine learning systems are efficient in systemic, failure-driven game development. Going beyond technical development, this project demonstrates the creation and implementation of inclusive and sustainable learning practices, allowing players to learn new skills and adapt to challenges, regardless of current skill level, aligning with Sustainable Development Goal 4. The following section details how specific findings from the Semester 1 case study analysis directly informed the technical design decisions implemented in this vertical slice.</p>
               </section>
 
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Development</h2>
-                <p class="mb-4">Placeholder — add development notes here.</p>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Research Context:</h2>
+                <p class="mb-4">The case study analysis revealed three key design principles that directly informed technical decisions, but also a critical tension. The examination of Dark Souls 3 showed that pattern recognition and predictable boss attacks create a foundation for victory; the Pontiff Sulyvahn encounter exemplifies how predictable attacks help construct mental models through constant repetition, aligning with Kolb’s ‘abstract conceptualisation’ stage. This finding helped shape the core technical decision of developing a system that uses Proximal Policy Optimisation reinforcement learning within Unity’s ML-Agents toolkit. The agent observes the player's health percentage and attack frequency, calibrating the boss's behaviour accordingly.</p>
+                <p class="mb-4">The analysis of Celeste concluded that instant respawns that compress failure loops into 10-15 second intervals help sustain the player's flow state by reducing downtime between run attempts, encouraging rapid iteration without consequences. The analysis of Outer Wilds’ time-loop mechanic showed that knowledge persistence transforms punitive failure into cumulative progress, demonstrating that even deaths contribute to a player's understanding of the game.</p>
+                <p class="mb-4">However, the analysis exposed a critical tension: Celeste’s minimal punishment helps maintain flow but reduces the impact of failure, whereas Dark Souls 3’s lengthy runbacks intentionally disrupt flow, heightening the impact of failure, resulting in reflection. This raised the question of whether a machine learning algorithm can balance these two conflicting ideas, adapting to encounter difficulty and consequences.</p>
+                <p class="mb-4">After theoretical research, I concluded that optimal learning occurs at the intersection of Vygotsky’s Zone of Proximal Development and Csikszentmihalyi’s Flow State, where challenges are slightly beyond the player's current ability, yet still achievable through practice and achieving a flow state. This is another key principle that informed the use of an adaptive difficulty system. Where previous research aimed to discover the effectiveness of failure as a learning mechanism, this project is a technical demonstration, evaluating how machine learning can contribute to failure-based learning tools.</p>
               </section>
 
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Evaluation</h2>
-                <p class="mb-4">Placeholder — add evaluation here.</p>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Development:</h2>
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">System Architecture:</h3>
+                <p class="mb-4">Following the Dark Souls 3 analysis of the Pontiff Sulyvahn encounter, which identified the importance of spatial awareness when recognising attack patterns, particularly in encounters with 1.5-second attack telegraphs. I implemented Unity’s Cinemachine third-person camera system with 360-degree orbital tracking, aligning with Kolb’s reflective observation stage by ensuring constant visual contact with the boss during attempts. This fixes the issue in Semester 1’s research, as the boss will be completely visible, reducing the chance of dying to attacks caused by irregular camera movement.</p>
+                <p class="mb-4">Player movement uses Unity’s event-driven input system, utilising Celeste’s rapid iteration principle of 10-15-second failure loops to minimise latency and maintain flow. The input action map system also enables cross-platform accessibility, aligning with Self-Determination Theory’s autonomy principle by allowing more diverse input methods and reducing hardware constraints that could disrupt engagement.</p>
+                <p class="mb-4">These infrastructure components provide the stable foundation for failure-based learning. The camera ensures players have sufficient spatial awareness, while responsive input enables rapid iteration and experimentation, supporting flow consistency. Together, they form the basis on which the ML agent introduces calibrated difficulty variation.</p>
+
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">ML Implementation:</h3>
+                <p class="mb-4">Unity ML-Agents is an open-source tool developed by Unity that allows games to act as environments for agent training using reinforcement learning. This slice implements Proximal Policy Optimisation (PPO), an algorithm developed by OpenAI that is considered state-of-the-art for its training stability. PPO works by limiting how drastically the policy (the agent's decision-making) can change between training steps, preventing forgetting that was common in earlier algorithms. This allows the boss to develop adaptive behaviour rather than simple scripted responses, and creates a practical outcome of the Semester 1 finding that optimal learning occurs when challenges remain slightly beyond current ability, yet are achievable through iteration.</p>
+
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Observation Space Configuration:</h3>
+                <p class="mb-4">The ZombieAgent observes a 5-dimensional state vector at five key decision points: Player Health Percentage (0.0-1.0) tracked via the PlayerHealth components HealthSystem. Player Attack Frequency, (0.0-1.0) calculated through the PlayerAttackTracker monitoring for successful attacks over a rolling five-second window. Initially, a lower window of 3 seconds was used, but this proved overly aggressive against the boss. Distance to player (0.0-1.0) tracked against a 20-meter max range. Boss Health Percentage (0.0-1.0) tracked by the agent’s HealthSystem. Attack Cooldown (0.0-1.0) normalised against the 1.5-second cooldown period. This observation space was designed to operate within ZPD boundaries, with the player's health percentage directly affecting the challenge: high health signals to the agent that the difficulty is insufficient, while low health signals that it is intense. Attack frequency helps identify a player's offensive ability and engagement, allowing distance and cooldown decisions to be made accordingly. All observations are capped at the (0.0-1.0) range to ensure stable PPO updates during agent training.</p>
+                <p class="mb-4">While boss health is included in observations, it serves tactical rather than strategic purposes. The agent uses its own health to gauge engagement intensity and risk, but the reward function is calibrated more towards the player, ensuring the agent optimises for learning goals rather than self-preservation. This design decision prevents the agent from learning defensive behaviours that could create an unfair encounter or eliminate the player's flow-state.</p>
+
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Action Space Configuration:</h3>
+                <p class="mb-4">The ZombieAgent controls boss behaviour through a hybrid action space approach: two continuous action parameters controlling movement (moveX and moveZ, each with ranges of (-1.0, 1.0), and one discrete action with two branches (0 = no attack, 1 = attack). Continuous movement actions enable smooth navigation toward or away from the player, whereas discrete actions provide clear decision points for attacking. The ZombieController executes these actions, updating the animator based on movement, triggering an attack state when the discrete action fires within the attack range (1.5 metres) and outside the cooldown period (1.5 seconds).</p>
+                <p class="mb-4">Following the Dark Souls 3 principle that pattern recognition requires consistent consequence, attack damage remains fixed at 10 points per hit; the agent is unable to alter this. This suggests that failure remains informative, ensuring players can learn rather than dying to random spikes in boss damage. The action space design resolves the Celeste minimal-punishment versus Dark Souls consistent-consequence tension identified in Semester 1 by enabling adaptive difficulty through behavioural parameters (attack frequency and movement aggression), while maintaining damage consistency.</p>
+
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Reward Function:</h3>
+                <p class="mb-4">The reward function is extremely important to the whole system, as it is how the agent learns good and bad behaviours. I designed this function to balance multiple objectives: maintaining engagement, creating challenges, and preserving the learning value of failure.</p>
+                <p class="mb-4">Outlined below is a table describing each behaviour, its reward, and the rationale for each.</p>
+                <table class="w-full border-collapse border border-nord6/40 rounded-lg overflow-hidden">
+                  <thead>
+                    <tr class="bg-nord9 text-white">
+                      <th class="px-4 py-3 text-left border-b border-nord6/40">Behaviour:</th>
+                      <th class="px-4 py-3 text-left border-b border-nord6/40">Reward:</th>
+                      <th class="px-4 py-3 text-left border-b border-nord6/40">Reasoning:</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-nord6/40 bg-nord3/20">
+                      <td class="px-4 py-2 text-white">Dealing damage to the player.</td>
+                      <td class="px-4 py-2">+0.1</td>
+                      <td class="px-4 py-2">Encourages aggression.</td>
+                    </tr>
+                    <tr class="border-b border-nord6/40">
+                      <td class="px-4 py-2 text-white">Getting closer to the player.</td>
+                      <td class="px-4 py-2">+0.01</td>
+                      <td class="px-4 py-2">Encourages engagement.</td>
+                    </tr>
+                    <tr class="border-b border-nord6/40 bg-nord3/20">
+                      <td class="px-4 py-2 text-white">Staying too far from the player.</td>
+                      <td class="px-4 py-2">-0.01</td>
+                      <td class="px-4 py-2">Punishment for being too passive.</td>
+                    </tr>
+                    <tr class="border-b border-nord6/40">
+                      <td class="px-4 py-2 text-white">Surviving each step.</td>
+                      <td class="px-4 py-2">+0.001</td>
+                      <td class="px-4 py-2">Encourages survival.</td>
+                    </tr>
+                    <tr class="border-b border-nord6/40 bg-nord3/20">
+                      <td class="px-4 py-2 text-white">Killing the player too fast.</td>
+                      <td class="px-4 py-2">-0.5</td>
+                      <td class="px-4 py-2">Punishes overwhelming difficulty.</td>
+                    </tr>
+                    <tr class="border-b border-nord6/40">
+                      <td class="px-4 py-2 text-white">The player gets low health.</td>
+                      <td class="px-4 py-2">+0.2</td>
+                      <td class="px-4 py-2">Rewards threaten the player.</td>
+                    </tr>
+                    <tr class="bg-nord3/20">
+                      <td class="px-4 py-2 text-white">The boss takes damage.</td>
+                      <td class="px-4 py-2">-0.05</td>
+                      <td class="px-4 py-2">Encourages self-preservation.</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Analysis:</h3>
+                <p class="mb-4">Training completed after around 320,000 steps, with cumulative reward rising from zero to 25.68 and stabilising around 50,000 steps. The value loss decreased over time from 0.15 to 0.035, indicating that the agent developed increasingly accurate predictions of potential future rewards. Policy loss varied between 0.066 and 0.074 throughout training, suggesting that the neural network identified a stable strategy rather than resorting to the common forgetful characteristics of earlier reinforcement learning algorithms. These metrics demonstrate that the agent successfully learned to optimise for rewards and engaging gameplay. (Appendix 1, 2026)</p>
+                <p class="mb-4">Following the training, I tested the agent in inference mode to determine if the learned behaviour aligned with the overall goal of the project. After testing across ten separate encounters, I identified a clear pattern: The agent consistently demonstrated balanced and adaptive behaviour, pursuit was started immediately, maintaining aggression without overwhelming difficulty, and each encounter lasted between 15 and 30 seconds on average. This duration supported Celeste’s rapid iteration principle, while avoiding the lengthy runbacks of Dark Souls.</p>
+                <p class="mb-4">However, due to computational and time constraints, I was unable to complete any formal validation of this training. Initial testing runs indicated true validation would require approximately 500-800 training episodes, which would require 15-20 hours of continuous agent training, which exceeded what I had available for idle training. Additionally, the training process would have benefited from a human player to test the trained neural network, providing feedback on how the algorithm performed, as well as what could be improved. The main takeaway from this project was a trained agent which provided technical feasibility of the core hypothesis. The trained agent helps players maintain flow and encourages learning and meaningful gameplay.</p>
+                <p class="mb-4">During agent training, there was one consistent bug that persisted through multiple attempted fixes: once training began, the boss would run laps around the player at normal speeds, and wouldn’t attack the player at all.  This was particularly frustrating as I couldn’t figure out how to fix it for numerous sessions. Eventually, the root-cause of the bug was found, the NavMesh Agent’s stopping distance was set to 1.4, which prevented the boss from entering the 1.5 attack range. Setting the stopping distance to zero and implementing manual logic in OnActionReceived resolved it, but the trial-and-error fixing process lasted several hours, eating into the time I had allocated for training.</p>
+              </section>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Conclusion:</h2>
+                <p class="mb-4">This project successfully implemented a learning algorithm, demonstrating that PPO reinforcement learning can be effectively used to promote failure-based learning principles, particularly those identified in Semester 1’s case study analysis. After training, an agent was produced which maintained encounter durations of 15-30 seconds and balanced challenge, linking to both Vygotsky’s Zone of Proximal Development and Csikszentmihalyi’s Flow State. While computational and time constraints prevented formal player testing, inference testing confirmed that the agent was successful in turning the key principles of failure-based learning into an implementable, adaptive algorithm.</p>
+                <p class="mb-4">This project has the potential for further adaptation and progression, such as accessibility features or personal difficulty calibration through a menu screen. Educational game development could implement automated systems in order to teach learners who struggle with typical difficulty selection systems, while commercial applications of this project could enhance player retention by implementing further skill-based systems and mechanics, such as quests or difficulty calibration. Future adaptations should use more comprehensive training cycles with larger episode counts and actual formal testing with other people.</p>
+              </section>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Appendices:</h2>
+                <p class="mb-2">FromSoftware. (2016). Dark Souls III [Video game]. Bandai Namco Entertainment.</p>
+                <p class="mb-2">Maddy Makes Games. (2018). Celeste [Video game]. Self-published.</p>
+                <p class="mb-2">Mobius Digital. (2019). Outer Wilds [Video game]. Annapurna Interactive.</p>
+                <p class="mb-2">Nintendo. (2017). The Legend of Zelda: Breath of the Wild [Video game]. Nintendo.</p>
+                <p class="mb-2">Piaget, J. (1972). The psychology of the child. [online] New York: Basic Books.</p>
+                <p class="mb-2">Vygotsky, L. S. (1978). Mind in society: The development of higher psychological processes. Cambridge, MA: Harvard University Press. [online]</p>
+                <p class="mb-2">Deci, E. L., &amp; Ryan, R. M. (1985). Intrinsic motivation and self-determination in human behaviour. New York: Plenum Press. [online]</p>
+                <p class="mb-2">Kolb, D. (1984). Experiential Learning: Experience As The Source Of Learning And Development Executive skills of Family Medicine Faculty View project How You Learn Is How You Live View project. [online] Available at: https://carleton-wp-production.s3.amazonaws.com/uploads/sites/313/2022/12/Experiential_Learning_Experience_As_The_Source_Of_-1.pdf.</p>
+                <p class="mb-2">McLeod, S. (2025). Constructivism Learning Theory &amp; Philosophy of Education. [online] Simply Psychology. Available at: https://www.simplypsychology.org/constructivism.html.</p>
+                <p class="mb-2">McLeod, S. (2025). Piaget's cognitive stages of development. [online] Simply Psychology. Available at: https://www.simplypsychology.org/piaget.html.</p>
+                <p class="mb-2">Csikszentmihalyi, M., Abuhamdeh, S. and Nakamura, J. (2014). Flow. Flow and the Foundations of Positive Psychology, [online] pp.227–238. doi:https://doi.org/10.1007/978-94-017-9088-8_15.</p>
+                <p class="mb-2">Csikszentmihalyi, M. (1990). Flow: the psychology of optimal experience. 1st ed. [online] Colorado Mountain College. New York: Harper &amp; Row. Available at: https://cmc.marmot.org/Record/.b10803749.</p>
+              </section>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Bibliography:</h2>
+                <p>Unity. (2025). C# Code Style Guide (Unity 6 edition) | Unity. [online] Available at: https://unity.com/resources/c-sharp-style-guide-unity-6.</p>
               </section>
 
             </div>
