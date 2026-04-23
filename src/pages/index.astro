@@ -757,13 +757,13 @@ import {
                   <div class="slideshow-slide">
                     <a href="/images/Synapse/ZombieAgent3.png" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Synapse/ZombieAgent3.png" alt="Slackers Development Slide 5" class="w-full h-96 object-cover cursor-pointer">
-                      <div class="slideshow-title">Figure 5.3 - ZombieAgent 3</div>
+                      <div class="slideshow-title">Figure 5.2 - ZombieAgent 3</div>
                     </a>
                   </div>
                   <div class="slideshow-slide">
                     <a href="/images/Synapse/ZombieAgent4.png" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Synapse/ZombieAgent4.png" alt="Slackers Development Slide 6" class="w-full h-96 object-cover cursor-pointer">
-                      <div class="slideshow-title">Figure 5.4 - ZombieAgent 4</div>
+                      <div class="slideshow-title">Figure 5.3 - ZombieAgent 4</div>
                     </a>
                   </div>
                   <div class="slideshow-slide">
@@ -800,7 +800,7 @@ import {
 
                 <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Observation Space Configuration:</h3>
                 <p class="mb-4">The ZombieAgent observes a 5-dimensional state vector at five key decision points: Player Health Percentage (0.0-1.0) tracked via the PlayerHealth components HealthSystem. Player Attack Frequency, (0.0-1.0) calculated through the PlayerAttackTracker monitoring for successful attacks over a rolling five-second window. Initially, a lower window of 3 seconds was used, but this proved overly aggressive against the boss. Distance to player (0.0-1.0) tracked against a 20-meter max range. Boss Health Percentage (0.0-1.0) tracked by the agent’s HealthSystem. Attack Cooldown (0.0-1.0) normalised against the 1.5-second cooldown period. This observation space was designed to operate within ZPD boundaries, with the player's health percentage directly affecting the challenge: high health signals to the agent that the difficulty is insufficient, while low health signals that it is intense. Attack frequency helps identify a player's offensive ability and engagement, allowing distance and cooldown decisions to be made accordingly. All observations are capped at the (0.0-1.0) range to ensure stable PPO updates during agent training.</p>
-                <p class="mb-4">While boss health is included in observations, it serves tactical rather than strategic purposes. The agent uses its own health to gauge engagement intensity and risk, but the reward function is calibrated more towards the player, ensuring the agent optimises for learning goals rather than self-preservation. This design decision prevents the agent from learning defensive behaviours that could create an unfair encounter or eliminate the player's flow-state. (Figure 5.1 - 5.4)</p>
+                <p class="mb-4">While boss health is included in observations, it serves tactical rather than strategic purposes. The agent uses its own health to gauge engagement intensity and risk, but the reward function is calibrated more towards the player, ensuring the agent optimises for learning goals rather than self-preservation. This design decision prevents the agent from learning defensive behaviours that could create an unfair encounter or eliminate the player's flow-state. (Figure 5 - 5.3)</p>
 
                 <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Action Space Configuration:</h3>
                 <p class="mb-4">The ZombieAgent controls boss behaviour through a hybrid action space approach: two continuous action parameters controlling movement (moveX and moveZ, each with ranges of (-1.0, 1.0), and one discrete action with two branches (0 = no attack, 1 = attack). Continuous movement actions enable smooth navigation toward or away from the player, whereas discrete actions provide clear decision points for attacking. The ZombieController executes these actions, updating the animator based on movement, triggering an attack state when the discrete action fires within the attack range (1.5 metres) and outside the cooldown period (1.5 seconds).</p>
