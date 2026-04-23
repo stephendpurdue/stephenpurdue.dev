@@ -721,55 +721,55 @@ import {
                   <div class="slideshow-slide active">
                     <a href="/images/Synapse/NativeConsoleControlSupport.png" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Synapse/NativeConsoleControlSupport.png" alt="Enemy Collision (Part 1)" class="w-full h-96 object-cover cursor-pointer">
-                      <div class="slideshow-title">Native Console Support</div>
+                      <div class="slideshow-title">Figure 1 -Native Console Support</div>
                     </a>
                   </div>
                   <div class="slideshow-slide">
                     <a href="/images/Synapse/TensorBoard_1.png" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Synapse/TensorBoard_1.png" alt="Slackers Development Slide 6" class="w-full h-96 object-cover cursor-pointer">
-                      <div class="slideshow-title">TensorBoard 1</div>
+                      <div class="slideshow-title">Figure 2 - TensorBoard 1</div>
                     </a>
                   </div>
                   <div class="slideshow-slide">
                     <a href="/images/Synapse/TensorBoard_2.png" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Synapse/TensorBoard_2.png" alt="Slackers Development Slide 6" class="w-full h-96 object-cover cursor-pointer">
-                      <div class="slideshow-title">TensorBoard 2</div>
+                      <div class="slideshow-title">Figure 3 - TensorBoard 2</div>
                     </a>
                   </div>
                   <div class="slideshow-slide">
                     <a href="/images/Synapse/UnitTests_1.png" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Synapse/UnitTests_1.png" alt="Enemy Collision (Part 2)" class="w-full h-96 object-cover cursor-pointer">
-                      <div class="slideshow-title">Unit Tests</div>
+                      <div class="slideshow-title">Figure 4 - Unit Tests</div>
                     </a>
                   </div>
                   <div class="slideshow-slide">
                     <a href="/images/Synapse/ZombieAgent1.png" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Synapse/ZombieAgent1.png" alt="Slackers Development Slide 3" class="w-full h-96 object-cover cursor-pointer">
-                      <div class="slideshow-title">ZombieAgent 1</div>
+                      <div class="slideshow-title">Figure 5 - ZombieAgent 1</div>
                     </a>
                   </div>
                   <div class="slideshow-slide">
                     <a href="/images/Synapse/ZombieAgent2.png" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Synapse/ZombieAgent2.png" alt="Player Health" class="w-full h-96 object-cover cursor-pointer">
-                      <div class="slideshow-title">ZombieAgent 2</div>
+                      <div class="slideshow-title">Figure 5.1 - ZombieAgent 2</div>
                     </a>
                   </div>
                   <div class="slideshow-slide">
                     <a href="/images/Synapse/ZombieAgent3.png" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Synapse/ZombieAgent3.png" alt="Slackers Development Slide 5" class="w-full h-96 object-cover cursor-pointer">
-                      <div class="slideshow-title">ZombieAgent 3</div>
+                      <div class="slideshow-title">Figure 5.3 - ZombieAgent 3</div>
                     </a>
                   </div>
                   <div class="slideshow-slide">
                     <a href="/images/Synapse/ZombieAgent4.png" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Synapse/ZombieAgent4.png" alt="Slackers Development Slide 6" class="w-full h-96 object-cover cursor-pointer">
-                      <div class="slideshow-title">ZombieAgent 4</div>
+                      <div class="slideshow-title">Figure 5.4 - ZombieAgent 4</div>
                     </a>
                   </div>
                   <div class="slideshow-slide">
                     <a href="/images/Synapse/ZombieBrain.png" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Synapse/ZombieBrain.png" alt="Enemy Animation Tree" class="w-full h-96 object-cover cursor-pointer">
-                      <div class="slideshow-title">Zombie Brain</div>
+                      <div class="slideshow-title">Figure 6 - Zombie Brain</div>
                     </a>
                   </div>
                   <button class="slideshow-prev" aria-label="Previous slide">&#10094;</button>
@@ -792,7 +792,7 @@ import {
                 <h2 class="text-3xl font-bold text-white mb-4 mt-8">Development:</h2>
                 <h3 class="text-2xl font-semibold text-white mb-3 mt-6">System Architecture:</h3>
                 <p class="mb-4">Following the Dark Souls 3 analysis of the Pontiff Sulyvahn encounter, which identified the importance of spatial awareness when recognising attack patterns, particularly in encounters with 1.5-second attack telegraphs. I implemented Unity’s Cinemachine third-person camera system with 360-degree orbital tracking, aligning with Kolb’s reflective observation stage by ensuring constant visual contact with the boss during attempts. This fixes the issue in Semester 1’s research, as the boss will be completely visible, reducing the chance of dying to attacks caused by irregular camera movement.</p>
-                <p class="mb-4">Player movement uses Unity’s event-driven input system, utilising Celeste’s rapid iteration principle of 10-15-second failure loops to minimise latency and maintain flow. The input action map system also enables cross-platform accessibility, aligning with Self-Determination Theory’s autonomy principle by allowing more diverse input methods and reducing hardware constraints that could disrupt engagement.</p>
+                <p class="mb-4">Player movement uses Unity’s event-driven input system, utilising Celeste’s rapid iteration principle of 10-15-second failure loops to minimise latency and maintain flow. The input action map system (Figure 1), also enables cross-platform accessibility, aligning with Self-Determination Theory’s autonomy principle by allowing more diverse input methods and reducing hardware constraints that could disrupt engagement. I also chose to implement unit tests (Figure 4), to ensure each component worked as expected on build.</p>
                 <p class="mb-4">These infrastructure components provide the stable foundation for failure-based learning. The camera ensures players have sufficient spatial awareness, while responsive input enables rapid iteration and experimentation, supporting flow consistency. Together, they form the basis on which the ML agent introduces calibrated difficulty variation.</p>
 
                 <h3 class="text-2xl font-semibold text-white mb-3 mt-6">ML Implementation:</h3>
@@ -800,7 +800,7 @@ import {
 
                 <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Observation Space Configuration:</h3>
                 <p class="mb-4">The ZombieAgent observes a 5-dimensional state vector at five key decision points: Player Health Percentage (0.0-1.0) tracked via the PlayerHealth components HealthSystem. Player Attack Frequency, (0.0-1.0) calculated through the PlayerAttackTracker monitoring for successful attacks over a rolling five-second window. Initially, a lower window of 3 seconds was used, but this proved overly aggressive against the boss. Distance to player (0.0-1.0) tracked against a 20-meter max range. Boss Health Percentage (0.0-1.0) tracked by the agent’s HealthSystem. Attack Cooldown (0.0-1.0) normalised against the 1.5-second cooldown period. This observation space was designed to operate within ZPD boundaries, with the player's health percentage directly affecting the challenge: high health signals to the agent that the difficulty is insufficient, while low health signals that it is intense. Attack frequency helps identify a player's offensive ability and engagement, allowing distance and cooldown decisions to be made accordingly. All observations are capped at the (0.0-1.0) range to ensure stable PPO updates during agent training.</p>
-                <p class="mb-4">While boss health is included in observations, it serves tactical rather than strategic purposes. The agent uses its own health to gauge engagement intensity and risk, but the reward function is calibrated more towards the player, ensuring the agent optimises for learning goals rather than self-preservation. This design decision prevents the agent from learning defensive behaviours that could create an unfair encounter or eliminate the player's flow-state.</p>
+                <p class="mb-4">While boss health is included in observations, it serves tactical rather than strategic purposes. The agent uses its own health to gauge engagement intensity and risk, but the reward function is calibrated more towards the player, ensuring the agent optimises for learning goals rather than self-preservation. This design decision prevents the agent from learning defensive behaviours that could create an unfair encounter or eliminate the player's flow-state. (Figure 5.1 - 5.4)</p>
 
                 <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Action Space Configuration:</h3>
                 <p class="mb-4">The ZombieAgent controls boss behaviour through a hybrid action space approach: two continuous action parameters controlling movement (moveX and moveZ, each with ranges of (-1.0, 1.0), and one discrete action with two branches (0 = no attack, 1 = attack). Continuous movement actions enable smooth navigation toward or away from the player, whereas discrete actions provide clear decision points for attacking. The ZombieController executes these actions, updating the animator based on movement, triggering an attack state when the discrete action fires within the attack range (1.5 metres) and outside the cooldown period (1.5 seconds).</p>
@@ -857,7 +857,7 @@ import {
                 </table>
 
                 <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Analysis:</h3>
-                <p class="mb-4">Training completed after around 320,000 steps, with cumulative reward rising from zero to 25.68 and stabilising around 50,000 steps. The value loss decreased over time from 0.15 to 0.035, indicating that the agent developed increasingly accurate predictions of potential future rewards. Policy loss varied between 0.066 and 0.074 throughout training, suggesting that the neural network identified a stable strategy rather than resorting to the common forgetful characteristics of earlier reinforcement learning algorithms. These metrics demonstrate that the agent successfully learned to optimise for rewards and engaging gameplay.</p>
+                <p class="mb-4">Training completed after around 320,000 steps, with cumulative reward rising from zero to 25.68 and stabilising around 50,000 steps, (Figure 2). The value loss decreased over time from 0.15 to 0.035, indicating that the agent developed increasingly accurate predictions of potential future rewards. Policy loss varied between 0.066 and 0.074 throughout training, suggesting that the neural network identified a stable strategy rather than resorting to the common forgetful characteristics of earlier reinforcement learning algorithms, (Figure 3). These metrics demonstrate that the agent successfully learned to optimise for rewards and engaging gameplay.</p>
                 <p class="mb-4">Following the training, I tested the agent in inference mode to determine if the learned behaviour aligned with the overall goal of the project. After testing across ten separate encounters, I identified a clear pattern: The agent consistently demonstrated balanced and adaptive behaviour, pursuit was started immediately, maintaining aggression without overwhelming difficulty, and each encounter lasted between 15 and 30 seconds on average. This duration supported Celeste’s rapid iteration principle, while avoiding the lengthy runbacks of Dark Souls.</p>
                 <p class="mb-4">However, due to computational and time constraints, I was unable to complete any formal validation of this training. Initial testing runs indicated true validation would require approximately 500-800 training episodes, which would require 15-20 hours of continuous agent training, which exceeded what I had available for idle training. Additionally, the training process would have benefited from a human player to test the trained neural network, providing feedback on how the algorithm performed, as well as what could be improved. The main takeaway from this project was a trained agent which provided technical feasibility of the core hypothesis. The trained agent helps players maintain flow and encourages learning and meaningful gameplay.</p>
                 <p class="mb-4">During agent training, there was one consistent bug that persisted through multiple attempted fixes: once training began, the boss would run laps around the player at normal speeds, and wouldn’t attack the player at all.  This was particularly frustrating as I couldn’t figure out how to fix it for numerous sessions. Eventually, the root-cause of the bug was found, the NavMesh Agent’s stopping distance was set to 1.4, which prevented the boss from entering the 1.5 attack range. Setting the stopping distance to zero and implementing manual logic in OnActionReceived resolved it, but the trial-and-error fixing process lasted several hours, eating into the time I had allocated for training.</p>
