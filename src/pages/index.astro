@@ -686,7 +686,7 @@ import {
               </table>
 
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4">Table of Contents:</h2>
+                <h3 class="text-3xl font-bold text-white mb-4">Table of Contents:</h3>
                 <ol class="list-decimal pl-8 space-y-1">
                   <li>Introduction</li>
                   <li>Research Context</li>
@@ -703,13 +703,13 @@ import {
               <p class="mb-4"><strong>GitHub Repository:</strong> <a href="https://github.com/stephendpurdue/Synapse" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://github.com/stephendpurdue/Synapse</a></p>
 
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4">Introduction:</h2>
+                <h3 class="text-3xl font-bold text-white mb-4">Introduction:</h3>
                 <p class="mb-4">This project represents the practical continuation of theoretical research conducted in Semester 1: Failure as Feedback: Investigating the Role of Experimentation and Failure in Player Learning and Engagement within Systemic Games, which investigated the role of failure as a learning tool within systemic games. That research established a theoretical framework for further study through comparative analysis of four titles: Dark Souls 3 (FromSoftware, 2016), Celeste (Maddy Makes Games, 2018), Outer Wilds (Mobius Digital, 2019), and Breath of the Wild (Nintendo, 2017). This research identified key design principles that are successful in transforming failure from a punitive measure into productive and useful learning opportunities, supported by Constructivist Learning Theory (Piaget, 1972; Vygotsky, 1978), Kolb’s Learning Cycle (Kolb, 1984), Flow Theory (Csikszentmihalyi, 1990), and Self-Determination Theory (Deci &amp; Ryan, 1985).</p>
                 <p class="mb-4">This project delivers a polished vertical slice in Unity, featuring a third-person combat arena, a PPO-trained boss opponent with adaptive move sets, and real-time performance calibration to adjust attack patterns and overall aggression. This focuses on a single, well-crafted encounter to enable comprehensive training within the allotted time and to serve as a proof of concept that machine learning systems are efficient in systemic, failure-driven game development. Moving further, this project demonstrates the creation and implementation of inclusive and sustainable learning practices, allowing players to learn new skills and adapt to challenges, regardless of current skill level, linking with Sustainable Development Goal 4. The following section details how specific findings from the Semester 1 case study analysis directly informed the technical design decisions implemented in this vertical slice.</p>
               </section>
 
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Research Context:</h2>
+                <h3 class="text-3xl font-bold text-white mb-4 mt-8">Research Context:</h3>
                 <p class="mb-4">The case study analysis revealed three key design principles that directly informed technical decisions, but also a critical tension. The examination of Dark Souls 3 showed that pattern recognition and predictable boss attacks create a foundation for victory; the Pontiff Sulyvahn encounter exemplifies how predictable attacks help construct mental models through constant repetition, aligning with Kolb’s ‘abstract conceptualisation’ stage. This finding helped shape the core technical decision of developing a system that uses Proximal Policy Optimisation reinforcement learning within Unity’s ML-Agents toolkit. The agent observes the player's health percentage and attack frequency, calibrating the boss's behaviour accordingly.</p>
                 <p class="mb-4">The analysis of Celeste concluded that instant respawns that compress failure loops into 10-15 second intervals help sustain the player's flow state by reducing downtime between run attempts, encouraging rapid iteration without consequences. The analysis of Outer Wilds’ time-loop mechanic showed that knowledge persistence transforms punitive failure into cumulative progress, demonstrating that even deaths contribute to a player's understanding of the game.</p>
                 <p class="mb-4">However, the analysis exposed a critical tension: Celeste’s minimal punishment helps maintain flow but reduces the impact of failure, whereas Dark Souls 3’s lengthy runbacks intentionally disrupt flow, heightening the impact of failure, resulting in reflection. This raised the question of whether a machine learning algorithm can balance these two conflicting ideas, adapting to encounter difficulty and consequences.</p>
@@ -796,7 +796,7 @@ import {
               </div>
 
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Development:</h2>
+                <h3 class="text-3xl font-bold text-white mb-4 mt-8">Development:</h3>
                 <h3 class="text-2xl font-semibold text-white mb-3 mt-6">System Architecture:</h3>
                 <p class="mb-4">Following the Dark Souls 3 analysis of the Pontiff Sulyvahn encounter, which identified the importance of spatial awareness when recognising attack patterns, particularly in encounters with 1.5-second attack telegraphs. I implemented Unity’s Cinemachine third-person camera system with 360-degree orbital tracking, aligning with Kolb’s reflective observation stage by ensuring constant visual contact with the boss during attempts. This fixes the issue in Semester 1’s research, as the boss will be completely visible, reducing the chance of dying to attacks caused by irregular camera movement.</p>
                 <p class="mb-4">Player movement uses Unity’s event-driven input system, utilising Celeste’s rapid iteration principle of 10-15-second failure loops to minimise latency and maintain flow. The input action map system (Figure 1), also enables cross-platform accessibility, aligning with Self-Determination Theory’s autonomy principle by allowing more diverse input methods and reducing hardware constraints that could disrupt engagement. I also chose to implement unit tests (Figure 4), to ensure each component worked as expected on build.</p>
@@ -871,13 +871,13 @@ import {
               </section>
 
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Conclusion:</h2>
+                <h3 class="text-3xl font-bold text-white mb-4 mt-8">Conclusion:</h3>
                 <p class="mb-4">After thorough testing of the learning algorithm, I believe this slice demonstrates that PPO reinforcement learning can be effectively used to promote failure-based learning principles, particularly those identified in Semester 1’s case study analysis. After training, an agent was produced which maintained encounter durations of 15-30 seconds and balanced challenge, linking to both Vygotsky’s Zone of Proximal Development and Csikszentmihalyi’s Flow State. While computational and time constraints prevented formal player testing, inference testing confirmed that the agent was successful in turning the key principles of failure-based learning into an implementable, adaptive algorithm.</p>
                 <p class="mb-4">This project has the potential for further adaptation and progression, such as accessibility features or personal difficulty calibration through a menu screen. Educational game development could implement automated systems in order to teach learners who struggle with typical difficulty selection systems, while commercial applications of this project could enhance player retention by implementing further skill-based systems and mechanics, such as quests or difficulty calibration. Future adaptations should use more comprehensive training cycles with larger episode counts and actual formal testing with other people.</p>
               </section>
 
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4 mt-8">References:</h2>
+                <h3 class="text-3xl font-bold text-white mb-4 mt-8">References:</h3>
                 <div class="space-y-3 pl-4">
                   <p>Csikszentmihalyi, M. (1990). Flow: the psychology of optimal experience. 1st ed. [online] Colorado Mountain College. New York: Harper &amp; Row. Available at: <a href="https://cmc.marmot.org/Record/.b10803749" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://cmc.marmot.org/Record/.b10803749</a>.</p>
                   
