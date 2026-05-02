@@ -201,7 +201,7 @@ import {
 
               <!-- Contents -->
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4">Contents</h2>
+                <h2 class="text-3xl font-bold text-white mb-4">Table of Contents:</h2>
                 <ol class="list-decimal pl-8 space-y-1">
                   <li>Project Brief</li>
                   <li>Research</li>
@@ -215,7 +215,7 @@ import {
 
               <!-- Project Brief -->
               <section>
-                <h2 class="text-3xl font-bold text-white mb-4">Project Brief</h2>
+                <h2 class="text-3xl font-bold text-white mb-4">Project Brief:</h2>
                 <p class="mb-4">Images will open in a separate tab if clicked on!</p>
                 
                 <p class="mb-4">The project 'Slackers' is a brief given by RaRa Games in response to DM3108 - Negotiated Design Placement. It explores a unique game concept involving disguised aliens within human workplaces. The objective is to create a prototype that uses a gameplay loop centred around chaos and sabotage, similar to Among Us (InnerSloth, 2018).</p>
@@ -940,18 +940,319 @@ import {
                 >
               </div>
             </summary>
-            <div class="mt-4 space-y-3 text-sm text-nord6">
-              <p>
-               
-              </p>
-              <p>
+            <div class="mt-6 space-y-6 text-base text-nord6 max-w-5xl mx-auto slackers-content exodus-content">
+              <!-- Student Information Table -->
+              <table class="w-full border-collapse border border-nord6/40 rounded-lg overflow-hidden">
+                <tbody>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Student Name:</td>
+                    <td class="px-4 py-2">Stephen Purdue</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Student ID:</td>
+                    <td class="px-4 py-2">2301815</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Course:</td>
+                    <td class="px-4 py-2">BSc, Computer Games Design &amp; Development.</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Module:</td>
+                    <td class="px-4 py-2">DM3103 - Final Project</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Word Count:</td>
+                    <td class="px-4 py-2">5000 +10%</td>
+                  </tr>
+                  <tr class="border-b border-nord6/40">
+                    <td class="px-4 py-2 font-semibold text-white bg-nord3/40">Date of Submission:</td>
+                    <td class="px-4 py-2">08/05/2026 - Before 12:00pm</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p class="mb-4">Images will open in a separate tab if clicked on!</p>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4">Abstract:</h2>
+                <p class="mb-4">This dissertation presents the design, implementation, and critical analysis process of a procedurally generated dungeon crawler developed with Unity, looking at the challenges of maintaining real-time performance while maximising replayability through algorithmic procedural generation. The project investigates Binary Space Partitioning (BSP) trees (Shaker, 2016) and the Random Walk algorithm as a method for generating unique environments, examining how a procedural algorithm can balance structure and gameplay variety. This research and practice demonstrate that while BSP &amp; Random Walk excel at creating unique and coherent dungeons with consistent navigability, it requires extra randomisation techniques to prevent pattern recognition that emerges after repeated playthroughs.</p>
+                <p class="mb-4">The project architecture comprises three systems created in Unity: a BSP / Random Walk-based procedural generation algorithm that uses a queue to create interconnected environments, an objective system that adapts based on how many enemies are spawned, and a state-driven combat system including animations.</p>
+                <p class="mb-4">Comparative analysis evaluated the created system against current dungeon crawler titles, including The Binding of Isaac (McMillen, 2011), Enter the Gungeon (Dodge Roll, 2016), and Hades (Supergiant Games, 2020), examining environmental diversity and player engagement. This evaluation revealed that while BSP is computationally efficient, it produces less diverse environments than the hybrid generation methods used in the researched titles. Findings indicate that additional features, such as side-quests and win-conditions, are required to expand gameplay to the point where there is little to no repetition, and gameplay remains fun and engaging, highlighting the need to supplement algorithmic approaches with hand-crafted assets.</p>
+                <p class="mb-4">These findings have direct implications for independent game developers, where purely algorithmic generation can provide scalable content but must be balanced with hand-crafted systems to achieve high engagement and replayability, as is typical in roguelike titles.</p>
+              </section>
+
+              <p class="mb-4"><strong>GitHub repository:</strong> <a href="https://github.com/stephendpurdue/Exodus" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://github.com/stephendpurdue/Exodus</a><br>
+              <strong>Itch.io link:</strong> <a href="https://stephendpurdue.itch.io/exodus" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://stephendpurdue.itch.io/exodus</a></p>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4">Table of Contents:</h2>
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Introduction:</h2>
+                <p class="mb-4">Procedural content generation has become a defining trait in modern game development, enabling smaller indie studios to create expansive, replayable gameplay experiences without the resource-intensive demands of hand-crafted environments, used at more funded studios. Roguelike and dungeon crawler titles such as The Binding of Isaac, Enter the Gungeon, and Hades have become genre-defining examples that demonstrate the viability and success of using procedural generation algorithms, collectively generating millions in revenue, while maintaining engaged player bases years after launch. However, the technical implementation of procedural generation systems presents significant challenges; algorithmic generation must remain computationally efficient, balance environmental variety, and avoid predictable patterns to keep experiences unique and engaging.</p>
+                <p class="mb-4">This project investigates the design and implementation of a Binary Space Partitioning (BSP) tree algorithm for procedural dungeon generation in Unity. The following sections cover the comparative research conducted into existing titles, the technical implementation of the core gameplay loop, and a critical evaluation of the proposed research question: can a hybrid BSP and Random Walk algorithm produce dungeon environments with sufficient variety and coherence to sustain player engagement across multiple playthroughs, without relying solely on hand-crafted content pools, typically used by large studios?</p>
+                <p class="mb-4">BSP algorithms are used to recursively split a space into small segments and offer several advantages for real-time procedurally generated content (Michaels, 2020), especially computational and architectural efficiency, making them highly accessible for independent and indie developers. However, while there are benefits, there is still the question of long-term replayability and whether an algorithmic approach alone can generate sufficient variety to sustain player engagement across numerous playthroughs, or whether additional hand-crafted content is required to meet player expectations and produce equal opportunities for a smaller indie game that is typically successful in large AAA titles (United Nations, 2025).</p>
+              </section>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Methodology:</h2>
+                <p class="mb-4">To understand how successful titles approached procedural generation, three distinct titles were chosen for analysis. The Binding of Isaac (McMillen, 2011), Enter the Gungeon (Dodge Roll, 2016), and Hades (Supergiant Games, 2020). Each title uses a different approach to algorithmic generation and hand-crafted content; examining these differences helped to provide context for design decisions I made when creating Exodus.</p>
+                <p class="mb-4">The Binding of Isaac generates floor plans by expanding outward from a central starting room using a breadth-first random-walk algorithm. Each room can have a maximum of four neighbouring rooms, one for each side. This game uses a wide range of room placements, ensuring that each run is relatively unique and randomised compared to the last. Room interiors are pulled from a hand-crafted room pool, creating many combinations for each run. While this is fast and reliable, it can produce a limited variety for veteran players. From this, I decided to use solely generated rooms for Exodus, rather than a pool of hand-crafted ones, allowing unlimited variation in dungeon layout.</p>
+                <p class="mb-4">On the other hand, Enter the Gungeon uses a more structured approach. Rather than generating both the layout and room content at the same time, both are done separately. Each floor has a set of templates that define the main structure of the run, such as ensuring there is a shop before a boss fight or a secret room, etc. The procedural system used picks a template at random and then populates it with hand-crafted rooms. This ensures room quality is the same across runs, while the structure of each run is different. While this is an efficient method, it requires significant time investment, which is manageable for a larger, more funded studio but difficult for a smaller indie one.</p>
+                <p class="mb-4">Hades uses the least algorithmic approach of the three examples. Supergiant created a large pool of hand-crafted rooms for each biome, selecting from them during runtime using set rules rather than generating them procedurally. The procedural element of Hades is mainly in reward distribution, generating pots to destroy and other random rewards. Biome-specific rules decide what rooms spawn and when, for example, in Tartarus, smaller rooms are weighted to appear earlier, and larger rooms further into the run. This also provides consistent quality, but again requires significant studio investment.</p>
+                <p class="mb-4">Across all three titles, it is clear that each game supplements procedural generation with handcrafted content. The Binding of Isaac uses hand-crafted room pools, Enter the Gungeon uses hand-authored room templates, and Hades relies on hand-crafted chambers almost entirely.</p>
+              </section>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Development:</h2>
+
+                <div class="slideshow-container rounded-lg overflow-hidden border border-nord6/40 my-6" data-slideshow="exodus-1">
+                  <div class="slideshow-wrapper relative">
+                    <div class="slideshow-slide active">
+                      <a href="/images/Exodus/SimpleRandomWalk.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/SimpleRandomWalk.png" alt="Enemy Collision (Part 1)" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 1 - Simple Random Walk Generator</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/CorridorFirst.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/CorridorFirst.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 2 - Corridor First Generator</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/RoomFirst.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/RoomFirst.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 3 - Room First Generator</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/BinaryCheckForCornerTiles.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/BinaryCheckForCornerTiles.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 4 - Binary Check For Corner Tiles</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/BrokenWallGenerator.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/BrokenWallGenerator.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 5 - Broken Wall Generator</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/WallBinaryDebugLog.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/WallBinaryDebugLog.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 6 - Wall Binary Debug Log</div>
+                      </a>
+                    </div>
+                    
+                    <button class="slideshow-prev" aria-label="Previous slide">&#10094;</button>
+                    <button class="slideshow-next" aria-label="Next slide">&#10095;</button>
+                  </div>
+                  <div class="slideshow-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                    <span class="dot" data-slide="5"></span>
+                  </div>
+                </div>
+
+                <p class="mb-4">When beginning development, the first task was to set up the initial project, including version control. Due to the size of the game, I chose to use both Unity Version Control and GitHub, ensuring that there are multiple backups of the game files in the event of user error requiring a rollback or data corruption. I created a .gitignore file, which excluded all auto-generated directories to avoid bloating the repo, and removed the risk of any merge conflicts. This system was set up before any development began, ensuring all prerequisites were met before starting (Unity, 2026 - Unity Version Control). On top of this, I added built-in macOS and Linux support to allow non-Windows users to play, removing the barrier set by having a particular operating system. I also chose to create a Trello board for time management (Appendix 1).</p>
                 
-              </p>
-              <iframe
-                src="/documents/Stephen Purdue - CV.pdf"
-                class="w-full h-[900px] rounded-lg border border-nord6/40"
-                title="Final Project PDF"
-              ></iframe>
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Procedural Generation Algorithm:</h3>
+                <p class="mb-4">The first major technical system developed was the Procedural Generation algorithm. In the final version, the project uses a hybrid model of Binary Space Partitioning and Random Walk algorithms, with rooms deriving from the BSP, and corridors from Random Walk. This was an important design decision. I created it this way to produce more structurally coherent environments that are less random and more cohesive.</p>
+                <p class="mb-4">Before writing any algorithms, a base class, ‘AbstractDungeonGenerator’, was created to define the common structure shared between each generator in the project. This class exposes a single GenerateDungeon method, which clears the tilemap, runs a selected generation method through ‘RunProceduralGeneration’, and then broadcasts the new floor positions through an ‘OnGenerationComplete’ event. This allowed me to build and test multiple different generation strategies (RoomFirstDungeonGenerator, CorridorFirstDungeonGenerator, and SimpleRandomWalkDungeonGenerator), without duplicating logic such as tilemap clearing or generation callbacks, as they were included in the base class. Ensuring the codebase was clean and free of repeating logic, which could cause unnecessary performance issues.</p>
+                <p class="mb-4">The primary generator used is ‘RoomFirstDungeonGenerator’. This generator begins by passing dungeon bounds into a BSP function, which uses a queue to process the available space horizontally or vertically until the remaining sections fulfil the minimum width and height set in the inspector (Sian, 2025). I chose this approach because it ensures that each room has a size that is sufficient for each aspect of gameplay, which is important for top-down games where the player needs to be able to scan the environment, and because it provides the flexibility of being able to change room sizes at will through the inspector.</p>
+                <p class="mb-4">Corridor generation is handled by the Random Walk algorithm. A walk starts at a position, picks a random direction, moves one tile and repeats for a set number of steps. A HashSet is then used to store visited positions in a list, so that a seen space isn’t repeated. The generator runs this algorithm across multiple iterations, merging each into a single final set. The ‘startRandomlyEachIteration’ boolean then produces corridor shapes. When run, each new walk will begin from an already visited tile, causing paths to branch outward rather than overlap. The result produces corridors that differ across runs but remain structurally coherent.</p>
+                <p class="mb-4">Wall placement is handled by the WallTypesHelper script, which assigns each tile a binary code according to its neighbours, with an empty space being 0 and an occupied tile being 1. Each value is then checked at runtime to determine which wall prefab to place, ensuring the edges of the tilemap are filled correctly, regardless of the dungeon layout.</p>
+                <p class="mb-4">The BinarySpacePartitioning function processes spaces through a queue; each space is dequeued, and the algorithm decides whether to attempt a horizontal or vertical split. A horizontal split will occur only if the space is at least twice the minimum room height, and a vertical split will occur only if the space is at least twice the minimum room width. If neither split is possible, and the space meets minimum dimensions on all sides, the room is added to the final dungeon layout. Each room uses two generation modes that can be toggled through the inspector, one to fill room-bounds, and another to carve floor shapes and corridors outward from the room centre. These are then connected using the ConnectRooms function, which searches for the closest unconnected room and carves either a straight line or an L-shaped corridor to join them. This process is repeated until all rooms are interconnected and there are no empty spaces. Once this is finished, the ‘OnGenerationComplete’ is called, which passes the final floor positions to each spawner and the dungeon decorator.</p>
+                <p class="mb-4">The final post-processing pass is handled by ‘DungeonDecorator’, which categorises each floor tile by the number of neighbours it has. Tiles with four neighbours are classed as open room space, tiles with two or three neighbours are classed as edges, and tiles with zero or one neighbour are classed as dead ends. Each category has a set prefab pool (Unity, 2026, Prefabs) and changeable spawn probability in the inspector, ensuring that things like pillars and barrels spawn in corners, and coins spawn in open space.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Movement &amp; Attack System:</h3>
+                <p class="mb-4">The PlayerController script is the brain that controls all movement and attacks for the player. It is composed of one main class, with several subclasses assigned to various functions, the main of which is detecting input and controlling player movement accordingly. This also includes a method to flip the character sprite, so it is always facing the direction the player is moving; however, due to the sprite being 2D, it is unable to face away or toward the camera when moving up or down. This script also includes references to the character animator, ensuring certain animations play based on certain booleans or triggers. This included the animations for being idle, moving, attacking, taking damage, or dying.</p>
+                <p class="mb-4">The attack class for this script is relatively simple; it uses a Collider 2D and Physics2D (Unity, 2026, Scripting API) overlap circle to determine whether an enemy is in attack radius, and if the player presses ‘space’ when the enemy is within the appropriate distance, an attack is performed. I chose to include the visual indicator of the enemy flashing red to make it clear that damage had been received. This class also includes the logic necessary for destructible decorations, using a LayerMask to check which layer each component is on, and the same system used for attacking enemies. This was done to ensure the code was modular and computationally efficient.</p>
+                <p class="mb-4">When developing the attack system, the overlap circle took up nearly a whole day of testing to look at different attack ranges and damage increments. Should I progress this title further, I would skip this step entirely. This is because after considerable testing, there wasn’t too much of a noticeable difference, mainly because of the size of the sprites.</p>
+                
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Decorations &amp; Objective System:</h3>
+                <p class="mb-4">Decoration placement throughout each generated dungeon is handled by the DungeonDecorator script, which controls both which prefabs to use and their placement.</p>
+                <p class="mb-4">Firstly, a SerializedField (Unity, 2026, Serialisation rules) is used for each category of decoration and its spawn chance, so that they can be swapped out through the inspector. All spawned decorations are parented under a container so they can be bulk destroyed on regeneration without needing to scan the entire scene. This includes ‘openPrefabs, edgePrefabs, cornerPrefabs, keyPrefabs, hatchPrefabs, and wallPrefabs. These can all be swapped out at will, as well as new decoration categories added; all that is required is a new reference in the generator. Next, the Decorate method is used to clear decorations from the dungeon, and then a HashSet is looped through to determine if there are walls directly surrounding a tile, deciding which prefab type to place based on the result. The CountFloorNeighbours method is used to check the number of floor tiles and then spawn a prefab.</p>
+                <p class="mb-4">Exodus features two main objectives, and victory is achieved by completing either one. This involves eliminating all the enemies in the environment or collecting all the coins scattered throughout. These mechanics are handled by both the CoinCollector and EnemyTracker scripts.</p>
+                <p class="mb-4">Coins are scattered throughout the environment by the DungeonDecorator, using the openPrefabs inspector element. These are given BoxCollider2D’s with isTrigger set to enabled. Once the player collides with the coin, the gameObject’s sprite is destroyed. This is linked to a text counter, which indicates the number of coins collected. Once the player picks up a coin, the counter is incremented. While this is a simple objective, it allowed me to implement an easy-win victory condition, so I could focus on other areas of development.</p>
+                <p class="mb-4">The EnemyTracker first resets at the start of each run to ensure that increments are accurate, and then counts the number of enemy sprites spawned on start. These are then filtered to the on-screen tracker so the player can see how many there are. When all the enemies have been defeated, the timeScale is set to zero, and the victoryMenu is set to active.</p>
+
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Enemy AI:</h3>
+                <p class="mb-4">The EnemyAI script controls the core behaviour of each enemy in Exodus, including movement and attack logic. It uses a finite state machine (FSM) architecture (Jagdale, 2021) and runs alongside Unity’s 2D Physics engine to enable typical enemy behaviours such as wandering, chasing, and dealing damage to the player.</p>
+                <p class="mb-4">The FSM defines three states: Idle, Chase, and Attack. These states are shifted based on detectionRange, loseAggroRange, and attackRange. The calculations for these variables are based on the distance between the enemy’s current position and the player, and are carried out inside Update(). While Idle, the enemy checks a timer, and if wandering is enabled in the inspector, it generates a random target point around its original spawnPosition and walks to it at 50% reduced speed. The system was designed this way so that wandering would feel more passive, and enemies wouldn’t move too fast unnecessarily.</p>
+                <p class="mb-4">Chasing is initiated once the player enters the enemy's detection range, and is carried out by calculating a 2D directional vector in MoveToward, which points directly at the player. This also applies to the sprite's Rigidbody2D, to push the enemy in a certain direction, as well as flipping the spriteRendered left or right so it is always facing the direction it is moving. Once the enemy reaches the player and passes its attackRange threshold, it switches to attack mode, stopping Idle and Chase so there is no animation overlap. While standing still, the enemy will attack the player if its attackTimer cooldown is ready; if so, the DealDamage sequence runs.</p>
+                <p class="mb-4">Looking back on this portion of development, had I had the idea, I’d have implemented context steering for the EnemyAI so they could walk around obstacles and walls more efficiently, without getting stuck. This is currently a significant drawback in the current build, as enemies tend to get stuck on objects that they can’t collide with, as the player can.</p>
+                <p class="mb-4">This script uses several practices to ensure code efficiency and sustainability. Components are cached in Awake() when not being used, avoiding expensive GetComponent calls during gameplay. It also uses a state machine with switch statements to restrict logic to what is currently being done. Further improvements could be made by using an event system rather than the currently large number of null checks; this would help reduce the risk of performance dips.</p>
+
+                <h3 class="text-2xl font-semibold text-white mb-3 mt-6">Menus &amp; Accessibility:</h3>
+                <p class="mb-4">The main menu for Exodus was created using Unity’s canvas system, allowing the interface to be arranged clearly (Figure 7 & 8 - Main Menu). I chose a traditional three-button layout as it was simple, easily recognisable to players, and supported quick navigation. To strengthen the atmosphere of the menu, the background was given a slight move effect when hovered over by the mouse, providing subtle visual feedback, and I chose to use a particle system to generate small ‘embers’ emanating from the bottom of the screen and rising to the top like sparks from a fire. This added a subtle level of detail that brought the menu to life. This effect helped to reinforce the dungeon theme right from the start, aiming to give a good impression to new users.</p>
+                <p class="mb-4">The settings menu is comprised of four key components typical of most modern video games, including a ‘resolution dropdown, volume slider, quality dropdown, and a fullscreen toggle’. These are all implemented through the SettingsMenu script, with each component having its own class to keep the system easy to maintain. This structure is common to most game-setting menus and is designed to provide users with clear, user-friendly controls.</p>
+                <p class="mb-4">Hardware inequality is a considerable barrier in modern gaming; most titles release with minimum specifications that can unintentionally exclude players with older PCs or consoles. The settings menu in Exodus addresses this by including a quality dropdown, resolution dropdown, volume slider and fullscreen toggle. (Figure 9) This game can be configured to run on a wide range of hardware, rather than having fixed specifications. This helps address SDG 10’s call for reduced inequality and increased opportunity around the world. By including these settings, the game offers a basic, but important level of customisation that makes it more accessible for a wide range of users.</p>
+                <p class="mb-4">Procedural generation also contributes to this idea. The BSP, Random Walk hybrid approach removes the bottleneck that makes hand-created content development impractical for smaller, under-funded teams, meaning that solo or indie developers could use this approach to create a replayable game without the infrastructure that large titles like Hades require (Shaker, Togelius and Nelson, 2016). This helps to reduce the barrier to development for independent developers, which can act as a form of reduced inequality.</p>
+                <p class="mb-4">With additional development time, I’d expand on this further by including remappable controls to help those with motor impairment, as well as a colourblind mode to address the large portion of players affected with this affliction.</p>
+              </section>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Analysis:</h2>
+
+                <p class="mb-4">The main research question for this project was whether a hybrid BSP and Random Walk algorithm could produce dungeon environments with sufficient variety and coherence to sustain player engagement across multiple playthroughs, without relying on hand-crafted asset pools used by large studios. Based on the development, implementation and comparative research conducted, there is visible room for improvement.</p>
+                <p class="mb-4">Structurally, the hybrid system performed well, generating coherent dungeon layouts that never overlapped or were repeated. Each room was interconnected via ConnectRooms, and the minimum room dimensions set out ensured that each room had enough playable space. This was an efficient approach, as it removed the need to manually validate each layout. The RandomWalk algorithm added more variation that would’ve been missing had I used a pure BSP approach, mainly because the startRandomlyEachIteration function ensured that corridor geometry was noticeably different in each run. For a solo developer, this approach is both computationally and time-efficient, as it ensures that there is no need for hand-crafted room pools, which would have taken a large chunk of development time.</p>
+                <p class="mb-4">Where this system failed was the variety over time, this being especially clear after researching three titles. The Binding of Isaac supplements its generation algorithm with large pools of hand-crafted rooms, adding more variety on top of the algorithmic generation, even if the floor plan is somewhat similar. Even for a long-time Isaac player, they still experience some level of variety because the room interior is usually different. For Exodus, however, there is no equivalent; each generated layout is empty and then populated with decorations and interactable objects, meaning that once a player understands how each generation works, subsequent playthroughs will have an element of predictability despite the layout being different each time.</p>
+                <p class="mb-4">In comparison, Enter the Gungeon uses a flow graph system that introduces structural variety that BSP cannot replicate; it uses loops, forced routes through a shop, and multi-way forks in the environment to create unique layouts and routes for players to take. Whereas in Exodus, each room shares the same rectangular shape, joined by a corridor, creating a sense of regularity that doesn’t exist in Gungeon. Hades also has a high encounter quality compared to others, but this comes at a high development cost and would have been impractical for this project.</p>
+                <p class="mb-4">After playtesting, it’s clear that while the game does have a measure of replayability, it would require additional progression systems to last longer than a few sessions. This could be achieved by adding ‘meta-progression’, which is typical of games in this genre and entails additional characters, difficulty modifiers, cosmetics, and extra achievements. Hades, and its sequel Hades 2, are notable examples of this mechanic done well, as there is plenty more to do once the main game is completed. Additional runs can be completed to finish remaining side-stories, unlock new weapons, and get secret achievements. Without these extra systems, the game feels somewhat lacklustre and barebones when playing for extended sessions.</p>
+                <p class="mb-4">Finally, when comparing the practicality of this approach for both indie and AAA developers, it's clear that there are different aspects that algorithmic generation can and cannot provide. BSP with Random Walk corridors acts as an efficient foundation, removing the bottleneck that makes Hades or Gungeon scale development impractical for smaller studios, and produces consistent environments without hand-creating any assets. However, Shaker, Togelius and Nelson (2016) conclude that procedural generation systems work best when combined with human-authored content, supporting this conclusion. Learning from this, Exodus could be improved significantly with a smaller pool of hand-crafted room prefabs, providing much more variety without spending considerable time on asset creation alone.</p>
+              </section>
+
+              <div class="slideshow-container rounded-lg overflow-hidden border border-nord6/40 my-6" data-slideshow="exodus-2">
+                  <div class="slideshow-wrapper relative">
+                    <div class="slideshow-slide active">
+                      <a href="/images/Exodus/mainmenu.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/mainmenu.png" alt="Enemy Collision (Part 1)" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 7 - Main Menu v1</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/mainmenuv2.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/mainmenuv2.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 8 - Main Menu v2</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/settingsmenu.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/settingsmenu.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 9 - Settings Menu</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/gameovermenu.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/gameovermenu.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 10 - Game Over Menu</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/gameplay1.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/gameplay1.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 11 - Gameplay (Post-Processing)</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/bloomsettings.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/bloomsettings.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 11.1 - Bloom (Post-Processing)</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/colouradjustments.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/colouradjustments.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 11.2 - Colour Adjustments (Post-Processing)</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/shadows.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/shadows.png" alt="" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 11.3 - Shadows, Midtones, and Highlights (Post-Processing)</div>
+                      </a>
+                    </div>
+                    
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/PlayerMovement.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/PlayerMovement.png" alt="Enemy Animation Tree" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 12 - Player Movement Script</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/proceduralgeneration1.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/proceduralgeneration1.png" alt="Environment" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 13 - Procedural Generation Script (Part 1)</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/proceduralgeneration2.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/proceduralgeneration2.png" alt="Environment" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 13.1 - Procedural Generation Script (Part 2)</div>
+                      </a>
+                    </div>
+                    <div class="slideshow-slide">
+                      <a href="/images/Exodus/proceduralgeneration3.png" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Exodus/proceduralgeneration3.png" alt="Environment" class="w-full h-96 object-cover cursor-pointer">
+                        <div class="slideshow-title">Figure 13.2 - Procedural Generation Script (Part 3)</div>
+                      </a>
+                    </div>
+                    <button class="slideshow-prev" aria-label="Previous slide">&#10094;</button>
+                    <button class="slideshow-next" aria-label="Next slide">&#10095;</button>
+                  </div>
+                  <div class="slideshow-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                    <span class="dot" data-slide="5"></span>
+                    <span class="dot" data-slide="6"></span>
+                    <span class="dot" data-slide="7"></span>
+                    <span class="dot" data-slide="8"></span>
+                    <span class="dot" data-slide="9"></span>
+                    <span class="dot" data-slide="10"></span>
+                    <span class="dot" data-slide="11"></span>
+                  </div>
+                </div>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Evaluation:</h2>
+                <p class="mb-4">Informal playtesting was conducted by end-users on itch.io, as well as through connections from LinkedIn. Users were asked to complete at least one full session and provide any feedback regarding visuals, difficulty, replayability, and overall enjoyment.</p>
+                <p class="mb-4">I was able to gather data and feedback from seven separate playtest sessions, while most of it was positive, several improvements were highlighted that have now been implemented. To start, there was a lack of background ambience or any sound; this has been rectified by adding an ambient background soundtrack, as well as an attack sound for the player. I felt this was appropriate for the scale of the project, and I aim to add more should the game get bigger.</p>
+                <p class="mb-4">One consistent trend with feedback identified a lack of ambient lighting or post-processing effects; in the uploaded build, these were all absent. I have since improved upon this by adding bloom, colour adjustments, and shadows to the entire game. These were all simple, quick changes that immediately improved the visual clarity and feel of the game by giving certain environmental assets, such as torches, more vibrance.</p>
+                <p class="mb-4">The consistent trend of feedback highlighting a lack of audio and lighting suggests that players have base expectations of this genre prefer brighter, more appealing visuals, as well as consistent atmospheric sound. All of these are consistent throughout the titles researched in the methodology, suggesting that these are important factors and should be prioritised alongside the main mechanics. Several players also noted that after two or three runs, the dungeon environments began to feel similar and somewhat predictable. While this was acknowledged, fixing this would have required a full redesign of the generation algorithm and was out of scope.</p>
+                <p class="mb-4">Given the small sample size, I feel that true validation and feedback are still missing. This would require a minimum of thirty individual responses, ranging from various demographics, backgrounds, and systems, to get a wide range of results.</p>
+                <p class="mb-4">Overall, the short, yet informal playtesting segment confirmed that there was a functional core gameplay loop and was engaging to begin with; there was significant room for improvement, which has been taken into account during further development.</p>
+              </section>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Conclusion:</h2>
+                <p class="mb-4">This project aimed to answer whether a hybrid BSP and Random Walk could produce dungeon layouts that provide enough variety and coherence to sustain player engagement over numerous playthroughs, without relying on hand-crafted content pools used by larger studios.</p>
+                <p class="mb-4">The implementation of this demonstrated that this hybrid method is efficient and produces a solid foundation for further development. The produced dungeons were consistently both structurally coherent and had enough variety to sustain player engagement for the short-term. This is a successful development pipeline for a solo developer, as it acts as an appealing alternative to the considerable time investment of hand-crafted assets or room pools used in Hades, Isaac, and Gungeon.</p>
+                <p class="mb-4">However, both the comparative analysis and informal playtesting highlighted that algorithmic generation isn’t sufficient alone to create an engaging experience. Without hand-crafted room pools, meta-progression, or a flow-graph system, replayability and variety begin to noticeably degrade after a few runs. Each of the researched titles has a different feature used that differentiates them from each other, and highlights the improvement that could be made to Exodus.</p>
+                <p class="mb-4">Based on these findings, a more practical route for indie developers would be a hybrid model of using algorithmic generation for layout, with a small to medium-sized pool of hand-crafted content to add variety to the already generated environments. This could be paired with a small progression system or detailed objective system to create more engaging experiences, even for smaller studios. This method could act as a stepping stone for an indie developer or small studio to start working on their own dungeon crawler or similar title, with room to adapt and further add to this method.</p>
+                <p class="mb-4">If Exodus were taken further, future development would consist of implementing context steering for enemy AI, implementing a small progression system, and creating a small pool of pre-created rooms that could be added to the generation algorithm. This would help address the lack of variety and predictability.</p>
+              </section>
+
+               <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Time Management &amp; Contingencies: (Appendix 1)</h2>
+                <p class="mb-4">To complete development on schedule, time management was important to ensure the creation of a complete game. I created a Trello board to visualise and manage the project workflow, ensuring time for research, development, bug fixing, and the dissertation write-up. Weeks 1-3 involved research on successful isometric titles to identify key trends. Weeks 4-7 involved creating the environment, character, and camera controllers. Weeks 8-11 involved the main portion of development, including the quest system and main menu development, as well as fixing any bugs from previous weeks. The final section in Week 12 included final dissertation additions, as well as the last bug fixes and polishing before submission.</p>
+                <p class="mb-4">To mitigate potential disruption, several contingencies were used to ensure a smooth development timeline. In the event of data loss, both Unity Version Control and GitHub were used to host all files. If time constraints became an issue, focus would shift to ensuring that a playable version was ready for the end-of-year show.</p>
+                <p class="mb-4">The Trello Board can be accessed here.</p>
+              </section>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Appendices:</h2>
+                <div class="space-y-3 pl-4">
+                  <p>McMillen, E. (2011). The Binding of Isaac [Video game]. Nifalis Inc.</p>
+                  <p>Dodge Roll. (2016). Enter the Gungeon [Video game]. Devolver Digital.</p>
+                  <p>Jagdale, D. (2021). Finite State Machine in Game Development. International Journal of Advanced Research in Science, Communication and Technology, [online] 10(1), pp.384–390. doi:<a href="https://doi.org/10.48175/ijarsct-2062" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://doi.org/10.48175/ijarsct-2062</a>.</p>
+                  <p>Michaels, J. (2020). Binary Spatial Partitioning for Dungeon Generation. [online] Medium. Available at: <a href="https://medium.com/datavt/binary-spatial-partitioning-for-dungeon-generation-a0716c642488" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://medium.com/datavt/binary-spatial-partitioning-for-dungeon-generation-a0716c642488</a></p>
+                  <p>Shaker, N., Togelius, J. and Nelson, M.J. (2016). Procedural Content Generation in Games. Computational Synthesis and Creative Systems. Cham: Springer International Publishing. doi:<a href="https://doi.org/10.1007/978-3-319-42716-4" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://doi.org/10.1007/978-3-319-42716-4</a>.</p>
+                  <p>Sian, T.B. (2025). From Algorithm to Playable Space: A Technical Note on BSP-Based Dungeon Design. International Journal of Creative Multimedia, [online] 6(2), pp.287–308. doi:<a href="https://doi.org/10.33093/ijcm.2025.6.2.16" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://doi.org/10.33093/ijcm.2025.6.2.16</a>.</p>
+                  <p>Supergiant Games. (2020). Hades. [Video game]. Supergiant Games.</p>
+                  <p>Supergiant Games. (2025) Hades II. [Video game]. Supergiant Games.</p>
+                  <p>United Nations (2025). Goal 10 | Reduce Inequality within and among Countries. [online] United Nations. Available at: <a href="https://sdgs.un.org/goals/goal10" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://sdgs.un.org/goals/goal10</a>.</p>
+                  <p>Unity Technologies (n.d.) Unity version control. Available at: <a href="https://docs.unity.com/en-us/unity-version-control/tutorials-landing" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://docs.unity.com/en-us/unity-version-control/tutorials-landing</a> (Accessed: April 2026).</p>
+                  <p>Unity Technologies (n.d.) Scripting API: Physics2D. Available at: <a href="https://docs.unity3d.com/ScriptReference/Physics2D.html" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://docs.unity3d.com/ScriptReference/Physics2D.html</a> (Accessed: April 2026).</p>
+                  <p>Unity Technologies (n.d.) Manual: Prefabs. Available at: <a href="https://docs.unity3d.com/Manual/Prefabs.html" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://docs.unity3d.com/Manual/Prefabs.html</a> (Accessed: April 2026).</p>
+                  <p>Unity Technologies (2024) Manual: Serialisation rules. Available at: <a href="https://docs.unity3d.com/Manual/script-serialization-rules.html" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://docs.unity3d.com/Manual/script-serialization-rules.html</a> (Accessed: April 2026)</p>
+                </div>
+              </section>
+
+              <section>
+                <h2 class="text-3xl font-bold text-white mb-4 mt-8">Bibliography:</h2>
+                <div class="space-y-3 pl-4">
+                  <p>Gamestudies.org. (2024). Game Studies - Genre, Prototype Theory and the Berlin Interpretation of Roguelikes. [online] Available at: <a href="https://gamestudies.org/2403/articles/cartlidge" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://gamestudies.org/2403/articles/cartlidge</a>.</p>
+                  <p>Khan, S. (2022). Implementing Wave Function Collapse &amp; Binary Space Partitioning for Procedural Dungeon Generation. [online] Medium. Available at: <a href="https://medium.com/@ShaanCoding/implementing-wave-function-collapse-binary-space-partitioning-for-procedural-dungeon-generation-2f1a6cc376db" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://medium.com/@ShaanCoding/implementing-wave-function-collapse-binary-space-partitioning-for-procedural-dungeon-generation-2f1a6cc376db</a></p>
+                  <p>Sprinks, H.T. (2025). Best Indie Games With Hand-Crafted Environments. [online] GameRant. Available at: <a href="https://gamerant.com/best-indie-games-handcrafted-environments/" target="_blank" rel="noopener noreferrer" class="text-nord9 hover:text-nord8 underline">https://gamerant.com/best-indie-games-handcrafted-environments/</a></p>
+                </div>
+              </section>
             </div>
           </details>
         </div>
