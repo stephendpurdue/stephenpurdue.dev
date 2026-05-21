@@ -16,7 +16,7 @@ const { name, description, icon: Icon, link } = Astro.props;
 ---
 
 <a
-	class={`project-card bg-nord5 dark:bg-nord4 rounded-lg p-4 flex flex-col gap-2 group hover:ring ring-nord9 transition-all text-white ${
+	class={`project-card bg-nord5 dark:bg-nord4 rounded-lg p-4 flex flex-col gap-2 group hover:ring ring-nord9 transition-all text-nord0 dark:text-white ${
 		Astro.props.class ?? ""
 	}`}
 	href={link}
@@ -43,27 +43,25 @@ const { name, description, icon: Icon, link } = Astro.props;
 				)
 			}
 		</div>
-		<div class="font-bold text-xl text-white">{name}</div>
+		<div class="font-bold text-xl text-nord0 dark:text-white">{name}</div>
 	</div>
 	<div class="">
-		<div class="text-white">{description}</div>
+		<div class="text-nord0 dark:text-white">{description}</div>
 	</div>
 </a>
 
 <style>
 	.project-card {
-		background-color: #D8DEE9 !important; /* nord5 */
-		color: #FFFFFF !important;
+		background-color: #d8dee9 !important; /* nord5 */
+		color: #2e3440 !important; /* nord0 */
 	}
-	
-	@media (prefers-color-scheme: dark) {
-		.project-card {
-			background-color: #4C566A !important; /* nord4 */
-			color: #FFFFFF !important;
-		}
+
+	:global(html.dark) .project-card {
+		background-color: #4c566a !important; /* nord4 */
+		color: #eceff4 !important; /* nord6 */
 	}
-	
+
 	.project-card div {
-		color: #FFFFFF !important;
+		color: inherit !important;
 	}
 </style>

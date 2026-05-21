@@ -12,20 +12,20 @@ import {
 
 <Layout title="Stephen Purdue">
   <main class="pb-32">
-    <section class="about-intro font-mono bg-nord0 dark:bg-nord1 px-4 py-8 max-w-2xl mx-auto">
+    <section class="about-intro font-mono bg-nord6 dark:bg-nord1 px-4 py-8 max-w-2xl mx-auto">
       <div class="flex flex-col phone:flex-row items-center phone:items-start gap-6">
         <img
           src="/images/profile.jpg"
           alt="Stephen Purdue"
           class="w-28 h-28 rounded-full border-2 border-nord9 object-cover shrink-0"
         />
-        <div class="flex flex-col gap-2 text-white phone:text-left text-center">
+        <div class="flex flex-col gap-2 text-nord0 dark:text-nord6 phone:text-left text-center">
           <h1 class="text-2xl font-bold text-nord9">Stephen Purdue</h1>
-          <p class="flex items-center justify-center phone:justify-start gap-1 text-sm text-white">
+          <p class="flex items-center justify-center phone:justify-start gap-1 text-sm text-nord0 dark:text-nord6">
             <MapPin size={16} weight="fill" />
             Southampton, UK
           </p>
-          <p class="text-sm leading-relaxed text-white">
+          <p class="text-sm leading-relaxed text-nord0 dark:text-nord6">
             Hi, I'm Stephen Purdue. I've been studying as a Game Developer for
             the last 4 years working in Unity and Unreal Engine, I'm currenly learning Python and
             Machine Learning, in order to pursue a career in Software Engineering.
@@ -34,7 +34,7 @@ import {
             for Machine Learning and Artificial Intelligence. Learning new technologies is
             always an exciting opportunity and I enjoy building new things with them.
           </p>
-          <div class="flex gap-4 mt-2 justify-center phone:justify-start text-white">
+          <div class="flex gap-4 mt-2 justify-center phone:justify-start text-nord0 dark:text-nord6">
             <a
               href="mailto:stephendpurdue@gmail.com"
               class="social-link transition-colors hover:text-nord9"
@@ -127,16 +127,16 @@ import {
         link="https://github.com/stephendpurdue/Exodus"
       />
     </div>
-    <div data-name="university" class="hidden">
+    <div data-name="university" class="university-theme hidden">
       <div class="mx-auto max-w-6xl px-4 flex flex-col gap-6">
         <div class="text-center">
-          <h2 class="text-3xl font-bold text-white">University Projects</h2>
+          <h2 class="text-3xl font-bold text-nord0 dark:text-nord6">University Projects</h2>
         </div>
         <div
           class="grid gap-4 phone:grid-cols-1 tablet:grid-cols-1 laptop:grid-cols-1"
         >
           <details
-            class="group rounded-2xl border border-nord6/40 bg-nord0/60 p-4 text-white shadow transition hover:border-nord9 focus-within:border-nord9"
+            class="group rounded-2xl border border-nord3/40 dark:border-nord6/40 bg-nord5/90 dark:bg-nord0/60 p-4 text-nord0 dark:text-nord6 shadow transition hover:border-nord9 focus-within:border-nord9"
           >
             <summary
               class="flex w-full cursor-pointer list-none items-start justify-between gap-3 text-left font-semibold"
@@ -622,7 +622,7 @@ import {
           </details>
           <!-- New Project Tab -->
           <details
-            class="group rounded-2xl border border-nord6/40 bg-nord0/60 p-4 text-white shadow transition hover:border-nord9 focus-within:border-nord9"
+            class="group rounded-2xl border border-nord3/40 dark:border-nord6/40 bg-nord5/90 dark:bg-nord0/60 p-4 text-nord0 dark:text-nord6 shadow transition hover:border-nord9 focus-within:border-nord9"
           >
             <summary
               class="flex w-full cursor-pointer list-none items-start justify-between gap-3 text-left font-semibold"
@@ -908,7 +908,7 @@ import {
           </details>
 
           <details
-            class="group rounded-2xl border border-nord6/40 bg-nord0/60 p-4 text-white shadow transition hover:border-nord9 focus-within:border-nord9"
+            class="group rounded-2xl border border-nord3/40 dark:border-nord6/40 bg-nord5/90 dark:bg-nord0/60 p-4 text-nord0 dark:text-nord6 shadow transition hover:border-nord9 focus-within:border-nord9"
           >
             <summary
               class="flex w-full cursor-pointer list-none items-start justify-between gap-3 text-left font-semibold"
@@ -1249,74 +1249,161 @@ import {
 
   <style>
     button[data-target] {
-      background-color: #ECEFF4 !important; /* nord6 */
-      color: #2E3440 !important; /* nord0 */
+      background-color: #eceff4 !important; /* nord6 - light */
+      color: #2e3440 !important; /* nord0 */
     }
-    
-    @media (prefers-color-scheme: dark) {
-      button[data-target] {
-        background-color: #D8DEE9 !important; /* nord5 */
-        color: #2E3440 !important; /* nord0 */
-      }
+
+    :global(html.dark) button[data-target] {
+      background-color: #d8dee9 !important; /* nord5 - dark */
+      color: #2e3440 !important; /* nord0 */
     }
 
     .about-intro a:not(.social-link) {
-      color: #88C0D0; /* nord9 */
+      color: #88c0d0; /* nord9 */
       text-decoration: underline;
     }
 
     .about-intro a:not(.social-link):hover {
-      color: #81A1C1; /* nord10 */
+      color: #5e81ac; /* nord10 */
     }
 
     .about-intro .social-link {
       background: transparent !important;
-      color: #FFFFFF !important;
+      color: #2e3440 !important; /* nord0 - light */
     }
 
     .about-intro .social-link:hover {
-      color: #88C0D0 !important; /* nord9 */
+      color: #88c0d0 !important; /* nord9 */
     }
-    
+
+    :global(html.dark) .about-intro .social-link {
+      color: #eceff4 !important; /* nord6 - dark */
+    }
+
+    :global(html.dark) .about-intro .social-link:hover {
+      color: #88c0d0 !important; /* nord9 */
+    }
+
     button[data-target].bg-nord9 {
-      background-color: #88C0D0 !important; /* nord9 */
-      color: #FFFFFF !important;
+      background-color: #88c0d0 !important; /* nord9 */
+      color: #ffffff !important;
     }
-    
+
     /* PDF iframe styling */
     iframe {
-      background-color: #ECEFF4; /* nord6 */
+      background-color: #eceff4; /* nord6 - light */
       min-height: 500px;
     }
-    
+
     @media (max-width: 640px) {
       iframe {
         height: 500px !important;
       }
     }
-    
-    @media (prefers-color-scheme: dark) {
-      iframe {
-        background-color: #4C566A; /* nord4 */
-      }
+
+    :global(html.dark) iframe {
+      background-color: #4c566a; /* nord4 - dark */
     }
 
-    /* Slackers content styling */
-    .slackers-content h2 {
-      color: #88C0D0 !important; /* nord9 */
+    /* University theme - headings and body text */
+    .university-theme h2,
+    .university-theme h3,
+    .university-theme .text-white {
+      color: #2e3440 !important; /* nord0 - light */
     }
-    
-    .slackers-content h3 {
-      color: #81A1C1 !important; /* nord10 */
+
+    :global(html.dark) .university-theme h2,
+    :global(html.dark) .university-theme h3,
+    :global(html.dark) .university-theme .text-white {
+      color: #eceff4 !important; /* nord6 - dark */
     }
-    
-    .slackers-content a {
-      color: #88C0D0; /* nord9 */
+
+    .university-theme tr.bg-nord9,
+    .university-theme tr.bg-nord9 th,
+    .university-theme tr.bg-nord9 td {
+      color: #ffffff !important;
+    }
+
+    .university-theme p,
+    .university-theme li,
+    .university-theme td,
+    .university-theme span,
+    .university-theme .text-nord6 {
+      color: #3b4252 !important; /* nord1 - light body */
+    }
+
+    :global(html.dark) .university-theme p,
+    :global(html.dark) .university-theme li,
+    :global(html.dark) .university-theme td,
+    :global(html.dark) .university-theme span,
+    :global(html.dark) .university-theme .text-nord6 {
+      color: #d8dee9 !important; /* nord5 - dark body */
+    }
+
+    .university-theme .bg-nord3\/40 {
+      background-color: rgba(76, 86, 106, 0.2) !important;
+    }
+
+    :global(html.dark) .university-theme .bg-nord3\/40 {
+      background-color: rgba(76, 86, 106, 0.4) !important;
+    }
+
+    .university-theme .bg-nord3\/20 {
+      background-color: rgba(76, 86, 106, 0.1) !important;
+    }
+
+    :global(html.dark) .university-theme .bg-nord3\/20 {
+      background-color: rgba(76, 86, 106, 0.2) !important;
+    }
+
+    /* Slackers / Synapse / Exodus content styling */
+    .slackers-content h2,
+    .synapse-content h2,
+    .exodus-content h2 {
+      color: #5e81ac !important; /* nord10 - light */
+    }
+
+    :global(html.dark) .slackers-content h2,
+    :global(html.dark) .synapse-content h2,
+    :global(html.dark) .exodus-content h2 {
+      color: #88c0d0 !important; /* nord9 - dark */
+    }
+
+    .slackers-content h3,
+    .synapse-content h3,
+    .exodus-content h3 {
+      color: #4c566a !important; /* nord3 - light */
+    }
+
+    :global(html.dark) .slackers-content h3,
+    :global(html.dark) .synapse-content h3,
+    :global(html.dark) .exodus-content h3 {
+      color: #81a1c1 !important; /* nord10 - dark */
+    }
+
+    .slackers-content a,
+    .synapse-content a,
+    .exodus-content a {
+      color: #5e81ac; /* nord10 - light */
       text-decoration: underline;
     }
-    
-    .slackers-content a:hover {
-      color: #81A1C1; /* nord10 */
+
+    .slackers-content a:hover,
+    .synapse-content a:hover,
+    .exodus-content a:hover {
+      color: #88c0d0; /* nord9 */
+    }
+
+    :global(html.dark) .slackers-content a,
+    :global(html.dark) .synapse-content a,
+    :global(html.dark) .exodus-content a {
+      color: #88c0d0; /* nord9 - dark */
+    }
+
+    :global(html.dark) .slackers-content a:hover,
+    :global(html.dark) .synapse-content a:hover,
+    :global(html.dark) .exodus-content a:hover {
+      color: #81a1c1; /* nord10 */
     }
 
     /* Slideshow title overlay */
@@ -1324,8 +1411,8 @@ import {
       position: absolute;
       top: 0;
       left: 0;
-      background-color: rgba(46, 52, 64, 0.85); /* nord0 with opacity */
-      color: #ECEFF4; /* nord6 */
+      background-color: rgba(236, 239, 244, 0.9); /* nord6 - light */
+      color: #2e3440; /* nord0 */
       padding: 0.5rem 1rem;
       font-size: 0.875rem;
       font-weight: 600;
@@ -1334,10 +1421,19 @@ import {
       pointer-events: none;
     }
 
+    :global(html.dark) .slideshow-title {
+      background-color: rgba(46, 52, 64, 0.85); /* nord0 - dark */
+      color: #eceff4; /* nord6 */
+    }
+
     /* Slideshow styling */
     .slideshow-container {
       position: relative;
-      background-color: #2E3440; /* nord0 */
+      background-color: #eceff4; /* nord6 - light */
+    }
+
+    :global(html.dark) .slideshow-container {
+      background-color: #2e3440; /* nord0 - dark */
     }
     
     .slideshow-wrapper {
@@ -1359,16 +1455,20 @@ import {
       width: 100%;
       height: 24rem;
       object-fit: cover;
-      background-color: #3B4252; /* nord1 */
+      background-color: #d8dee9; /* nord5 - light */
     }
-    
+
+    :global(html.dark) .slideshow-slide img {
+      background-color: #3b4252; /* nord1 - dark */
+    }
+
     .slideshow-prev,
     .slideshow-next {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background-color: rgba(46, 52, 64, 0.7); /* nord0 with opacity */
-      color: #ECEFF4; /* nord6 */
+      background-color: rgba(236, 239, 244, 0.85); /* nord6 - light */
+      color: #2e3440; /* nord0 */
       border: none;
       padding: 1rem;
       cursor: pointer;
@@ -1392,18 +1492,28 @@ import {
       right: 0;
     }
     
+    :global(html.dark) .slideshow-prev,
+    :global(html.dark) .slideshow-next {
+      background-color: rgba(46, 52, 64, 0.7); /* nord0 - dark */
+      color: #eceff4; /* nord6 */
+    }
+
     .slideshow-dots {
       text-align: center;
       padding: 1rem;
-      background-color: #2E3440; /* nord0 */
+      background-color: #eceff4; /* nord6 - light */
     }
-    
+
+    :global(html.dark) .slideshow-dots {
+      background-color: #2e3440; /* nord0 - dark */
+    }
+
     .dot {
       display: inline-block;
       width: 12px;
       height: 12px;
       margin: 0 4px;
-      background-color: #4C566A; /* nord3 */
+      background-color: #d8dee9; /* nord5 - light */
       border-radius: 50%;
       cursor: pointer;
       transition: background-color 0.3s;

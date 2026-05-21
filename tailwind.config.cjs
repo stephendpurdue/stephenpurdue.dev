@@ -1,10 +1,19 @@
-import defaultTheme from "tailwindcss/defaultTheme.js";
-// @ts-ignore
-import nordPlugin from "tailwind-nord";
+const defaultTheme = require("tailwindcss/defaultTheme");
+const nordPlugin = require("tailwind-nord");
 
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
+	darkMode: "class",
 	content: ["./src/**/*.{js,ts,tsx,jsx,astro}"],
+	safelist: [
+		{
+			pattern: /^(bg|text|border)-nord\d+(\/\d+)?$/,
+			variants: ["dark", "hover", "dark:hover", "focus-within"],
+		},
+		{
+			pattern: /^ring-nord\d+$/,
+		},
+	],
 	theme: {
 		extend: {
 			fontFamily: {
