@@ -1,0 +1,63 @@
+---
+import { timeline } from "../data/timeline";
+import TimelineCard from "./TimelineCard.astro";
+---
+
+<section class="timeline-root">
+  <div class="space-y-10">
+    {timeline.map((yearBlock) => (
+      <div class="timeline-year">
+        <div class="timeline-yearLabel font-mono text-nord9 text-2xl font-bold">
+          {yearBlock.year}
+        </div>
+
+        <div class="timeline-rail">
+          <div class="timeline-rows space-y-4">
+            {yearBlock.rows.map((row) => (
+              <div
+                class:list={[
+                  "grid gap-4",
+                  row.events.length === 2 ? "laptop:grid-cols-2" : "grid-cols-1",
+                ]}
+              >
+                {row.events.map((event) => (
+                  <TimelineCard event={event} />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .timeline-year {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .timeline-year {
+      grid-template-columns: 5.5rem 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+  }
+
+  .timeline-yearLabel {
+    line-height: 1;
+  }
+
+  .timeline-rail {
+    border-left: 2px solid rgba(76, 86, 106, 0.4); /* nord3/40 */
+    padding-left: 1rem;
+  }
+
+  :global(html.dark) .timeline-rail {
+    border-left-color: rgba(236, 239, 244, 0.4); /* nord6/40 */
+  }
+</style>
+

@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Project from "../components/Project.astro";
+import Timeline from "../components/Timeline.astro";
 import {
   GithubLogo,
   TwitterLogo,
@@ -72,8 +73,14 @@ import {
     </section>
     <div class="flex justify-center gap-4 py-6 max-w-6xl mx-auto w-full px-4">
       <button
-        data-target="projects"
+        data-target="timeline"
         class="px-4 py-2 rounded-full shadow shadow-transparent bg-nord9 text-white font-bold hover:bg-nord0 dark:hover:bg-nord6 hover:text-white dark:hover:text-nord0 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-transparent transition-all"
+      >
+        Timeline
+      </button>
+      <button
+        data-target="projects"
+        class="px-4 py-2 rounded-full shadow shadow-transparent bg-nord6 dark:bg-nord5 dark:text-nord0 text-nord0 font-bold hover:bg-nord6 dark:hover:bg-nord6 hover:text-nord0 dark:hover:text-nord0 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-transparent transition-all"
       >
         Projects
       </button>
@@ -84,9 +91,12 @@ import {
         University
       </button>
     </div>
+    <div data-name="timeline" class="mx-auto w-full max-w-6xl px-4">
+      <Timeline />
+    </div>
     <div
       data-name="projects"
-      class="px-4 mx-auto w-full max-w-6xl grid phone:grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 gap-4"
+      class="hidden px-4 mx-auto w-full max-w-6xl grid phone:grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 gap-4"
     >
       <Project
         name="Expense Tracker"
@@ -1674,7 +1684,7 @@ import {
     window.addEventListener("resize", () => logIframeMetrics("H2"));
 
     stashIframeSrc();
-    transition("projects");
+    transition("timeline");
 
     // #region agent log after initial layout
     requestAnimationFrame(() => {
