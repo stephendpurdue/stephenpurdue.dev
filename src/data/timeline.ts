@@ -34,12 +34,10 @@ export const timeline: TimelineYear[] = [
         events: [
           {
             title: "Cursor x AdTech Hackathon",
-            description:
-              "TBC",
+            description: " Built Whitespace, an online tool aimed at infering buying intent from keywords, and converting them into ad copy.",
             dateRange: "May",
             category: "Hackathon",
-            highlight: "TBC",
-            links: [{ kind: "github", href: "https://github.com/" }],
+            links: [{ kind: "github", href: "https://github.com/stephendpurdue/Whitespace" }],
           },
           {
             title: "Exodus",
