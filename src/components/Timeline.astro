@@ -1,63 +1,255 @@
 ---
 import { timeline } from "../data/timeline";
-import TimelineCard from "./TimelineCard.astro";
+import type { TimelineLink } from "../data/timeline";
+import { GithubLogo, LinkedinLogo, Globe } from "phosphor-react";
 ---
 
-<section class="timeline-root">
-  <div class="space-y-10">
-    {timeline.map((yearBlock) => (
-      <div class="timeline-year">
-        <div class="timeline-yearLabel font-mono text-nord9 text-2xl font-bold">
-          {yearBlock.year}
-        </div>
+<section class="timeline" aria-label="Timeline">
+  <h2 class="timeline-heading">Timeline</h2>
 
-        <div class="timeline-rail">
-          <div class="timeline-rows space-y-4">
-            {yearBlock.rows.map((row) => (
-              <div
-                class:list={[
-                  "grid gap-4",
-                  row.events.length === 2 ? "laptop:grid-cols-2" : "grid-cols-1",
-                ]}
-              >
-                {row.events.map((event) => (
-                  <TimelineCard event={event} />
-                ))}
+  <ol class="timeline-list">
+    {
+      timeline.map((entry) => (
+        <li class:list={["timeline-item", `marker-${entry.marker}`]}>
+          <span class="timeline-dot" aria-hidden="true" />
+
+          <div class="timeline-body">
+            <div class="timeline-header">
+              <div class="timeline-title-row">
+                <h3 class="timeline-title">{entry.title}</h3>
+                {(entry.links?.length ?? 0) > 0 ? (
+                  <div class="timeline-links">
+                    {entry.links?.map((l: TimelineLink) => (
+                      <a
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="timeline-link"
+                        aria-label={l.kind}
+                      >
+                        {l.kind === "github" ? (
+                          <GithubLogo size={16} weight="bold" />
+                        ) : l.kind === "linkedin" ? (
+                          <LinkedinLogo size={16} weight="bold" />
+                        ) : (
+                          <Globe size={16} weight="bold" />
+                        )}
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
               </div>
-            ))}
+              <time class="timeline-date">{entry.dateRange}</time>
+            </div>
+
+            <p class="timeline-role">{entry.role}</p>
+            <ul class="timeline-desc">
+              <li>{entry.description}</li>
+            </ul>
+            {entry.highlight ? (
+              <p class="timeline-highlight">{entry.highlight}</p>
+            ) : null}
           </div>
-        </div>
-      </div>
-    ))}
-  </div>
+        </li>
+      ))
+    }
+  </ol>
 </section>
 
 <style>
-  .timeline-year {
+  .timeline {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 1.5rem;
+    color: #2e3440; /* nord0 */
+  }
+
+  :global(html.dark) .timeline {
+    color: #eceff4; /* nord6 */
+  }
+
+  .timeline-heading {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .timeline-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+  }
+
+  .timeline-list::before {
+    content: "";
+    position: absolute;
+    left: 0.4375rem;
+    top: 0.35rem;
+    bottom: 0.35rem;
+    width: 1px;
+    background: rgba(76, 86, 106, 0.45); /* nord3 */
+  }
+
+  :global(html.dark) .timeline-list::before {
+    background: rgba(216, 222, 233, 0.28); /* nord4 */
+  }
+
+  .timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .timeline-dot {
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-top: 0.2rem;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .marker-blue .timeline-dot {
+    background: #5e81ac; /* nord10 */
+    border-color: #81a1c1; /* nord9 */
+  }
+
+  .marker-yellow .timeline-dot {
+    background: #ebcb8b; /* nord13 */
+    border-color: #f0d9a5;
+  }
+
+  .marker-green .timeline-dot {
+    background: #a3be8c; /* nord14 */
+    border-color: #b8d0a4;
+  }
+
+  .marker-red .timeline-dot {
+    background: #bf616a; /* nord11 */
+    border-color: #d08770; /* nord12 */
+  }
+
+  .timeline-body {
+    min-width: 0;
+  }
+
+  .timeline-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .timeline-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .timeline-title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .timeline-links {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-shrink: 0;
+  }
+
+  .timeline-link {
+    color: inherit;
+    opacity: 0.7;
+    transition: color 0.15s ease, opacity 0.15s ease;
+  }
+
+  .timeline-link:hover {
+    color: #5e81ac; /* nord10 */
+    opacity: 1;
+  }
+
+  :global(html.dark) .timeline-link:hover {
+    color: #88c0d0; /* nord8 */
+  }
+
+  .timeline-date {
+    font-size: 0.95rem;
+    color: #4c566a; /* nord3 */
+    white-space: nowrap;
+  }
+
+  :global(html.dark) .timeline-date {
+    color: #d8dee9; /* nord4 */
+  }
+
+  .timeline-role {
+    margin: 0.2rem 0 0;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #4c566a; /* nord3 */
+  }
+
+  :global(html.dark) .timeline-role {
+    color: #d8dee9; /* nord4 */
+  }
+
+  .timeline-desc {
+    margin: 0.45rem 0 0;
+    padding-left: 1.1rem;
+    color: #4c566a; /* nord3 */
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  :global(html.dark) .timeline-desc {
+    color: #d8dee9; /* nord4 */
+  }
+
+  .timeline-desc li {
+    padding-left: 0.15rem;
+  }
+
+  .timeline-highlight {
+    margin: 0.5rem 0 0;
+    font-weight: 600;
+    color: #ebcb8b; /* nord13 */
+    font-size: 0.95rem;
   }
 
   @media (min-width: 640px) {
-    .timeline-year {
-      grid-template-columns: 5.5rem 1fr;
-      gap: 1.25rem;
+    .timeline {
+      grid-template-columns: 7.5rem 1fr;
+      gap: 2rem;
       align-items: start;
     }
-  }
 
-  .timeline-yearLabel {
-    line-height: 1;
-  }
+    .timeline-heading {
+      font-size: 1.75rem;
+      padding-top: 0.05rem;
+    }
 
-  .timeline-rail {
-    border-left: 2px solid rgba(76, 86, 106, 0.4); /* nord3/40 */
-    padding-left: 1rem;
-  }
+    .timeline-header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
 
-  :global(html.dark) .timeline-rail {
-    border-left-color: rgba(236, 239, 244, 0.4); /* nord6/40 */
+    .timeline-date {
+      flex-shrink: 0;
+    }
   }
 </style>
-
