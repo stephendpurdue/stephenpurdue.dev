@@ -27,6 +27,20 @@ export const photos: Photo[] = [
   },
 
   {
+    src: "/images/photos/TML2026-MAINSTAGE-1.png",
+    alt: "TML2026 - MAINSTAGE 1",
+    description: "Mainstage Closing Ceremony",
+    location: "Tomorrowland, Belgium",
+  },
+
+  {
+    src: "/images/photos/TML2026-MAINSTAGE-2.png",
+    alt: "TML2026 - MAINSTAGE 2",
+    description: "Mainstage Daytime",
+    location: "Tomorrowland, Belgium",
+  },
+
+  {
     src: "/images/photos/TMLW2026.jpg",
     alt: "Orbyz Stage",
     description: "Orbyz Stage!",

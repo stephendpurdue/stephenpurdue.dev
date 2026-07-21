@@ -2,39 +2,29 @@
 import { photos } from "../data/photos";
 import { MapPin } from "phosphor-react";
 
-/** Stable-but-scattered tilts so cards don’t jump between builds. */
-const tilts = [-7, 5, -3, 6, -5, 4, -6, 3, -2, 7, -4, 5];
-
-const tiltedPhotos = photos.map((photo, index) => ({
-  ...photo,
-  tilt: tilts[index % tilts.length],
-}));
+const count = photos.length;
+/** Tall-left mosaic fills a 2×3 rectangle with no leftover cells. */
+const layoutClass = count === 5 ? "is-mosaic-5" : "is-uniform";
 ---
 
 {
-  tiltedPhotos.length > 0 ? (
+  photos.length > 0 ? (
     <section class="photo-gallery" aria-label="Photos">
       <h2 class="photo-gallery-heading">Photos</h2>
-      <ul class="photo-gallery-grid">
-        {tiltedPhotos.map((photo) => (
-          <li class="photo-card" style={`--tilt: ${photo.tilt}deg`}>
+      <ul class={`photo-gallery-masonry ${layoutClass}`}>
+        {photos.map((photo) => (
+          <li class="photo-tile">
             <button
               type="button"
-              class="photo-card-flip"
-              aria-label={`${photo.alt}. ${photo.description}. ${photo.location}. Click or hover to flip.`}
+              class="photo-tile-btn"
+              aria-label={`${photo.alt}. ${photo.description}. ${photo.location}.`}
             >
-              <span class="photo-card-inner">
-                <span class="photo-card-face photo-card-front">
-                  <img src={photo.src} alt={photo.alt} loading="lazy" />
-                </span>
-                <span class="photo-card-face photo-card-back">
-                  <span class="photo-card-back-body">
-                    <span class="photo-card-description">{photo.description}</span>
-                    <span class="photo-card-location">
-                      <MapPin size={16} weight="fill" />
-                      {photo.location}
-                    </span>
-                  </span>
+              <img src={photo.src} alt={photo.alt} loading="lazy" />
+              <span class="photo-tile-overlay">
+                <span class="photo-tile-description">{photo.description}</span>
+                <span class="photo-tile-location">
+                  <MapPin size={14} weight="fill" />
+                  {photo.location}
                 </span>
               </span>
             </button>
@@ -63,178 +53,165 @@ const tiltedPhotos = photos.map((photo, index) => ({
     color: #eceff4; /* nord6 */
   }
 
-  .photo-gallery-grid {
+  .photo-gallery-masonry {
     list-style: none;
     margin: 0;
-    padding: 0.75rem 0.25rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
-
-  @media (min-width: 480px) {
-    .photo-gallery-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .photo-gallery-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.25rem 1.75rem;
-    }
-  }
-
-  .photo-card {
-    perspective: 1000px;
-    transform: rotate(var(--tilt, 0deg));
-    transition: transform 0.25s ease;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .photo-card:hover {
-      transform: rotate(var(--tilt, 0deg)) scale(1.03);
-      z-index: 2;
-    }
-  }
-
-  .photo-card-flip {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 3;
     padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    border-radius: 0.75rem;
-    box-shadow: 0 8px 24px rgba(46, 52, 64, 0.18);
-    -webkit-tap-highlight-color: transparent;
+    gap: 0.75rem;
   }
 
-  :global(html.dark) .photo-card-flip {
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  /* Filled mosaic: one tall tile + four cells → complete 2×3 block */
+  .photo-gallery-masonry.is-mosaic-5 {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: clamp(22rem, 48vw, 34rem);
   }
 
-  .photo-card-flip:focus-visible {
-    outline: 2px solid #88c0d0; /* nord9 */
-    outline-offset: 3px;
+  .photo-gallery-masonry.is-mosaic-5 .photo-tile:first-child {
+    grid-row: span 2;
   }
 
-  .photo-card-inner {
+  @media (max-width: 699px) {
+    .photo-gallery-masonry.is-mosaic-5 {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      height: clamp(28rem, 120vw, 40rem);
+    }
+
+    .photo-gallery-masonry.is-mosaic-5 .photo-tile:first-child {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+  }
+
+  /* Other counts: flex so the last row grows and fills width */
+  .photo-gallery-masonry.is-uniform {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .photo-gallery-masonry.is-uniform .photo-tile {
+    flex: 1 1 16rem;
+    aspect-ratio: 4 / 3;
+    min-height: 11rem;
+  }
+
+  .photo-tile {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  .photo-tile-btn {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.55s ease;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .photo-card-flip:hover .photo-card-inner,
-    .photo-card-flip:focus-visible .photo-card-inner {
-      transform: rotateY(180deg);
-    }
-  }
-
-  .photo-card-flip.is-flipped .photo-card-inner {
-    transform: rotateY(180deg);
-  }
-
-  .photo-card-face {
-    position: absolute;
-    inset: 0;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-
-  .photo-card-front {
+    padding: 0;
+    border: none;
     background: #d8dee9; /* nord5 */
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  :global(html.dark) .photo-card-front {
+  :global(html.dark) .photo-tile-btn {
     background: #3b4252; /* nord1 */
   }
 
-  .photo-card-front img {
+  .photo-tile-btn:focus-visible {
+    outline: 2px solid #88c0d0; /* nord9 */
+    outline-offset: 3px;
+  }
+
+  .photo-tile-btn img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.45s ease;
   }
 
-  .photo-card-back {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.25rem;
-    transform: rotateY(180deg);
-    background: #e5e9f0; /* nord4-ish light */
-    color: #2e3440; /* nord0 */
-  }
-
-  :global(html.dark) .photo-card-back {
-    background: #3b4252; /* nord1 */
-    color: #eceff4; /* nord6 */
-  }
-
-  .photo-card-back-body {
+  .photo-tile-overlay {
+    position: absolute;
+    inset: auto 0 0;
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
-    text-align: center;
+    gap: 0.35rem;
+    padding: 2.5rem 1rem 1rem;
+    background: linear-gradient(
+      to top,
+      rgba(46, 52, 64, 0.88) 0%,
+      rgba(46, 52, 64, 0.45) 55%,
+      transparent 100%
+    );
+    color: #eceff4; /* nord6 */
+    text-align: left;
+    opacity: 0;
+    transform: translateY(0.4rem);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    pointer-events: none;
   }
 
-  .photo-card-description {
-    font-size: 0.95rem;
-    line-height: 1.45;
+  @media (hover: hover) and (pointer: fine) {
+    .photo-tile-btn:hover img,
+    .photo-tile-btn:focus-visible img {
+      transform: scale(1.04);
+    }
+
+    .photo-tile-btn:hover .photo-tile-overlay,
+    .photo-tile-btn:focus-visible .photo-tile-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  .photo-card-location {
+  .photo-tile-btn.is-active .photo-tile-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .photo-tile-description {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .photo-tile-location {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
-    font-size: 0.85rem;
-    color: #5e81ac; /* nord10 */
-  }
-
-  :global(html.dark) .photo-card-location {
+    gap: 0.3rem;
+    font-size: 0.78rem;
     color: #88c0d0; /* nord9 */
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .photo-card,
-    .photo-card-inner {
+    .photo-tile-btn img,
+    .photo-tile-overlay {
       transition: none;
     }
 
-    .photo-card {
+    .photo-tile-btn:hover img,
+    .photo-tile-btn:focus-visible img {
       transform: none;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      .photo-card:hover {
-        transform: none;
-      }
     }
   }
 </style>
 
 <script>
-  const cards = document.querySelectorAll(".photo-card-flip");
+  const tiles = document.querySelectorAll(".photo-tile-btn");
   const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   if (!canHover) {
-    cards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const isFlipped = card.classList.toggle("is-flipped");
-        cards.forEach((other) => {
-          if (other !== card) other.classList.remove("is-flipped");
+    tiles.forEach((tile) => {
+      tile.addEventListener("click", () => {
+        const isActive = tile.classList.toggle("is-active");
+        tiles.forEach((other) => {
+          if (other !== tile) other.classList.remove("is-active");
         });
-        card.setAttribute("aria-pressed", String(isFlipped));
+        tile.setAttribute("aria-pressed", String(isActive));
       });
     });
   }
